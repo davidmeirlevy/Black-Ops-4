@@ -1,0 +1,55 @@
+#root {
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.Main {
+    color: white;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.Main-header{
+    border: #ffa500 solid;
+    flex-basis: 100%;
+    vertical-align: middle;
+    line-height: 90px;
+    font-size: 60px;
+    color: #FFA500;
+    display: flex;
+
+
+
+}
+.Main-box{
+    color: #FFA500;
+    font-family: 'Orbitron', sans-serif;
+    height: 150px;
+    width: 300px;
+    flex-basis:50%;
+    margin: 10px;
+    border: #ffa500 solid;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+}
+.Main-username {
+    margin: 10px;
+    text-align: left;
+}
+
+.Main-player-stats {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.Main-header-box1,.Main-header-box2 {
+    font-size: 25px;
+    border: none;
+    text-align: right;
+}
+.Main-header-box1 {
+    height: 30px;
+}

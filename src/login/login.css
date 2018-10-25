@@ -1,0 +1,40 @@
+.Login {
+    width: max-content;
+    height: max-content;
+    background-color: black;
+    margin: auto;
+    color: orange;
+    animation: flicker 1s linear 2s infinite alternate;
+
+}
+@keyframes flicker {
+    0%   {    box-shadow: 0px 0px 0px #ffa500;}
+    100% {    box-shadow: 0px 0px 50px #ffa500;}
+
+
+}
+.Login-content {
+    font-family: 'Black Ops One', cursive;
+    font-size: 30px;
+    text-align: center;
+    height: -webkit-fill-available;
+    color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Login-input ,.Login-button {
+    box-shadow: orange 2px 2px 2px;
+    margin: 10px;
+    align-self: center;
+    width: 300px}
+
+.Login-spinner {
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+    align-self: center;
+    border-radius: 50%;
+
+}

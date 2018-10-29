@@ -1,6 +1,7 @@
 .App {
     background-color: black;
     color: orange;
-    align-content: center;
+    display: flex;
 
 }
+

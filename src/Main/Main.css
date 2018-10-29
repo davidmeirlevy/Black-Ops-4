@@ -4,46 +4,57 @@
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
     justify-content: space-around;
+    border: solid  gray;
+    margin: 5px;
 }
 
 .top {
     display: flex;
+    justify-content: center;
+;
 }
 
 .left, .right {
+    flex-wrap: wrap;
     text-align: left;
     display: flex;
     flex-direction: column;
     border: solid #794a00;
-    height: auto;
     margin: 10px;
+
     flex-basis: 20%;
     justify-content: space-around;
+    width: auto;
 }
 
 .left {
-    flex-basis: 70%;
-    font-size: 60px;
+    width: 400px;
+    font-size: 40px;
     margin: 10px;
+    display: flex;
+    flex-direction: row;
 }
 
 .right {
-    flex-basis: 30%;
+    font-size: 25px;
+    flex-direction: initial;
+    display: flex;
+
 }
 
 .right-sub {
-    width: auto;
+    width: max-content;
     margin: 2px;
 }
 
 .middle {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 }
 
 .middle-left {
+    min-width: auto;
     justify-content: center;
-
 }
 
 .middle-right, .middle-left {
@@ -53,3 +64,6 @@
     text-align: center;
 }
 
+.logo{
+    height: 100px;
+}

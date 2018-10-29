@@ -2,6 +2,7 @@
 
 .card-container ,.card-container-pie{
     margin: 10px;
+    padding: 10px;
     font-family: 'Titillium Web', sans-serif;
     display: flex;
     border: solid #00F9FF;
@@ -9,15 +10,16 @@
     height: max-content;
     flex-direction: column;
     justify-content: center;
-    width: 235px;
+    width: auto;
     border-radius: 15px;
 }
 
 .card-container-pie {
-    width: 335px;
+    width: auto;
 }
 
 .card-top {
+    margin: 5px;
     background-color: #00f9ff;
     color: black;
     border-bottom: solid #484848;
@@ -39,7 +41,7 @@
 
 .card-context-pie {
     font-size: 80px;
-    width: 335px;
+    width: 100%;
 
 }
 

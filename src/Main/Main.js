@@ -4,13 +4,13 @@ import './Main.css'
 import {Card, CardPie} from "../components/Card/CardPie";
 import ProgressBar from 'react-progress-bar-battlenet-style';
 import {getUserData} from "../http/Search";
-import {getPresentage, getShortNum} from "../components/Functions";
+import {getPresentage, getPrestigeImage, getShortNum} from "../components/Functions";
 
 class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: 'MenahemCohen',
+            username: this.props.name,
             level: null,
             lifetime: [],
             hits: 0,
@@ -33,9 +33,13 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
+        this.getData();
+    }
+
+    getData = () => {
         getUserData(this.state.username).then(({data}) => data)
             .then(({username, mp}) => {
-                console.log(mp);
+                // console.log(mp);
                 this.setState({
                     username: username,
                     level: mp['level'],
@@ -57,9 +61,7 @@ class Main extends React.Component {
                     assists: mp['lifetime'].all['assists']
                 })
             });
-
-    }
-
+    };
 
     render() {
         const totalShots = this.state.misses + this.state.hits;
@@ -67,15 +69,28 @@ class Main extends React.Component {
         return (
             <div className={'container'}>
                 <div className={'top'}>
-                    <div className={'left'}>{this.state.username}</div>
-                    <div className={'right'}>
-                        <div className={'right-sub'}>Level: {this.state.level}
-                            <ProgressBar
-                                completed={getPresentage(this.state.level, 55)}
-                                colors={[30, 70, 95]}/>
+                    <div className={'left'}>
+                        <div>
+
+                            <img  className={'logo'}
+                                 src={'https://image.ibb.co/inYpYA/07ef4a2a-37ba-4f4d-8be6-1be1b61bc102.png'}
+                                 alt={'logo'}/>
                         </div>
-                        <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
+                        <div>
+                            {this.state.username}
+
+                        </div>
+                        <div className={'right'}>
+                            <div className={'right-sub'}>Level: {this.state.level}
+                                <ProgressBar
+                                    completed={getPresentage(this.state.level, 55)}
+                                    colors={[30, 70, 95]}/>
+                            </div>
+                            <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
+                            {getPrestigeImage(this.state.prestige)}
+                        </div>
                     </div>
+
                 </div>
                 <div className={'middle'}>
                     <div className={'middle-left'}>
@@ -96,14 +111,15 @@ class Main extends React.Component {
                         <div>
 
                             <Card name={'Headshots'}
-                                  data={`${getPresentage(this.state.hs, this.state.hits, false)}%`}
-                                  sub={`${this.state.hs} Headshots in ${this.state.hits} Hits`}/>
+
+                                  data={this.state.hs}
+                                  sub={`${getPresentage(this.state.hs, this.state.hits, false)}% of you hits are headshots`}/>
                         </div>
                         <div>
 
                             <Card name={'Suicides'}
                                   data={this.state.suicides}
-                                  sub={`You commit a suicides ${this.state.suicides} times`}/>
+                                  sub={`${getPresentage(this.state.suicides, this.state.deaths, false)}% of you death is suicide `}/>
                         </div>
                         <div>
 
@@ -137,9 +153,8 @@ class Main extends React.Component {
                         </div>
 
                         <Card name={'EKIA (Kills + Assists) Ratio'}
-                              data={getShortNum((this.state.kills + this.state.assists)/this.state.deaths )}
-                              sub={`EKIA: ${this.state.assists +this.state.kills} | Death:${this.state.deaths}`}/>
-                        <Card name={'Title'} data={'data'}/>
+                              data={getShortNum((this.state.kills + this.state.assists) / this.state.deaths)}
+                              sub={`EKIA: ${this.state.assists + this.state.kills} | Death:${this.state.deaths}`}/>
                     </div>
                 </div>
             </div>

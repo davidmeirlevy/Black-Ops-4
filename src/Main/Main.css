@@ -1,55 +1,55 @@
-#root {
-    font-family: 'Orbitron', sans-serif;
-
-}
-
-.Main {
-    color: white;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.Main-header{
-    border: #ffa500 solid;
-    flex-basis: 100%;
-    vertical-align: middle;
-    line-height: 90px;
-    font-size: 60px;
-    color: #FFA500;
-    display: flex;
-
-
-
-}
-.Main-box{
-    color: #FFA500;
-    font-family: 'Orbitron', sans-serif;
-    height: 150px;
-    width: 300px;
-    flex-basis:50%;
-    margin: 10px;
-    border: #ffa500 solid;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 90px;
-}
-.Main-username {
-    margin: 10px;
-    text-align: left;
-}
-
-.Main-player-stats {
+.container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    justify-content: space-around;
 }
 
-.Main-header-box1,.Main-header-box2 {
-    font-size: 25px;
-    border: none;
-    text-align: right;
+.top {
+    display: flex;
 }
-.Main-header-box1 {
-    height: 30px;
+
+.left, .right {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border: solid #794a00;
+    height: auto;
+    margin: 10px;
+    flex-basis: 20%;
+    justify-content: space-around;
 }
+
+.left {
+    flex-basis: 70%;
+    font-size: 60px;
+    margin: 10px;
+}
+
+.right {
+    flex-basis: 30%;
+}
+
+.right-sub {
+    width: auto;
+    margin: 2px;
+}
+
+.middle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.middle-left {
+    justify-content: center;
+
+}
+
+.middle-right, .middle-left {
+    width: 50%;
+    display: flex;
+    flex-flow: wrap;
+    text-align: center;
+}
+

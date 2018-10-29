@@ -1,0 +1,48 @@
+
+
+.card-container ,.card-container-pie{
+    margin: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    display: flex;
+    border: solid #00F9FF;
+    animation: shadowBox 3s infinite;
+    height: max-content;
+    flex-direction: column;
+    justify-content: center;
+    width: 235px;
+    border-radius: 15px;
+}
+
+.card-container-pie {
+    width: 335px;
+}
+
+.card-top {
+    background-color: #00f9ff;
+    color: black;
+    border-bottom: solid #484848;
+    border-radius: 9px;
+
+}
+@keyframes shadowBox {
+    0% {box-shadow: 2px 1px 18px #00f9ff;}
+    50% {box-shadow: 2px 1px 5px #00999d;}
+    100% {box-shadow: 2px 1px 18px #00f9ff;}
+
+}
+
+.card-context {
+    font-size: 60px;
+    height: auto;
+    line-height: 111px;
+}
+
+.card-context-pie {
+    font-size: 80px;
+    width: 335px;
+
+}
+
+.card {
+    border-radius: 15%;
+}

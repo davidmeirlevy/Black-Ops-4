@@ -6,8 +6,10 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-loader-spinner": "^2.0.6",
+    "react-progress-bar-battlenet-style": "^1.0.0",
     "react-scripts": "2.0.5",
-    "victory": "^30.5.1"
+    "victory": "^30.5.1",
+    "victory-selection-container": "^30.3.1"
   },
   "scripts": {
     "start": "react-scripts start",

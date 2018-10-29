@@ -71,14 +71,12 @@ class Main extends React.Component {
                 <div className={'top'}>
                     <div className={'left'}>
                         <div>
-
-                            <img  className={'logo'}
+                            <img className={'logo'}
                                  src={'https://image.ibb.co/inYpYA/07ef4a2a-37ba-4f4d-8be6-1be1b61bc102.png'}
                                  alt={'logo'}/>
                         </div>
                         <div>
                             {this.state.username}
-
                         </div>
                         <div className={'right'}>
                             <div className={'right-sub'}>Level: {this.state.level}
@@ -93,21 +91,35 @@ class Main extends React.Component {
 
                 </div>
                 <div className={'middle'}>
-                    <div className={'middle-left'}>
+                    {/*<div className={'middle-left'}>*/}
+                    {/*<div>*/}
+                    {/*<CardPie name={`Win/Lose (${totalGames})`}*/}
+                             {/*data1={getPresentage(this.state.wins, totalGames)}*/}
+                             {/*data2={getPresentage(this.state.losses, totalGames)}*/}
+                             {/*sub={`Wins: ${this.state.wins} | Losses: ${this.state.losses}`}/>*/}
+                    {/*</div>*/}
+                    {/*<div>*/}
+                    {/*<CardPie name={`Shots (${totalShots})`}*/}
+                    {/*data1={getPresentage(this.state.hits, totalShots)}*/}
+                    {/*data2={getPresentage(this.state.misses, totalShots)}*/}
+                    {/*sub={`Hits: ${this.state.hits} | Miss: ${this.state.misses}`}/>*/}
+                    {/*</div>*/}
+                    {/*</div>*/}
+                    <div className={'middle-right'}>
+                        <div>
+                            <CardPie name={`Shots (${totalShots})`}
+
+                                     data1={getPresentage(this.state.hits, totalShots)}
+                                     data2={getPresentage(this.state.misses, totalShots)}
+                                     sub={`Hits: ${this.state.hits} | Miss: ${this.state.misses}`}/>
+
+                        </div>
                         <div>
                             <CardPie name={`Win/Lose (${totalGames})`}
                                      data1={getPresentage(this.state.wins, totalGames)}
                                      data2={getPresentage(this.state.losses, totalGames)}
                                      sub={`Wins: ${this.state.wins} | Losses: ${this.state.losses}`}/>
                         </div>
-                        <div>
-                            <CardPie name={`Shots (${totalShots})`}
-                                     data1={getPresentage(this.state.hits, totalShots)}
-                                     data2={getPresentage(this.state.misses, totalShots)}
-                                     sub={`Hits: ${this.state.hits} | Miss: ${this.state.misses}`}/>
-                        </div>
-                    </div>
-                    <div className={'middle-right'}>
                         <div>
 
                             <Card name={'Headshots'}

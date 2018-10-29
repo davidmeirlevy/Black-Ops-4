@@ -7,15 +7,16 @@
     display: flex;
     border: solid #00F9FF;
     animation: shadowBox 3s infinite;
-    height: max-content;
     flex-direction: column;
     justify-content: center;
-    width: auto;
+    width:200px;
+    height: 300px;
     border-radius: 15px;
 }
 
 .card-container-pie {
-    width: auto;
+    width: calc(100% + 34%);
+    height: auto;
 }
 
 .card-top {

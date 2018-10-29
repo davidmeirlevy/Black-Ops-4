@@ -4,8 +4,9 @@
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
     justify-content: space-around;
-    border: solid  gray;
+    border: solid gray;
     margin: 5px;
+    width: calc(100% - 76%);
 }
 
 .top {
@@ -58,7 +59,7 @@
 }
 
 .middle-right, .middle-left {
-    width: 50%;
+    width: 67%;
     display: flex;
     flex-flow: wrap;
     text-align: center;

@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/Black-Ops-4/static/css/main.0d60bbaa.chunk.css"
   },
   {
-    "revision": "39fb73ae11bfa9ad0861fd6005969554",
+    "revision": "03a9b5b7e18a1b95ff241db8c2b0acdd",
     "url": "/Black-Ops-4/index.html"
   }
 ];

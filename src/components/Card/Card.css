@@ -2,12 +2,12 @@
 
 .card{
     margin: 10px;
-    /*animation: shadowBox 3s infinite;*/
-    height: auto;
     text-align: center;
     color: #a6a6a6;
+    height: fit-content;
     background-color: #1f1f1f;
-    /*width: -webkit-fill-available;*/
+    width: -webkit-fill-available;
+    max-width: 290px;
 }
 
 .card-sub {
@@ -17,6 +17,7 @@
 }
 
 .card-top {
+    /*animation: shadowBox 3s infinite;*/
     background-color: #2a2a2a;
 }
 

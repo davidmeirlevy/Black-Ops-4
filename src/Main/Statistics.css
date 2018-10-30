@@ -8,7 +8,7 @@
     margin: 5px;
     width: 100%;
     background-color: #1b1b1b;
-    box-shadow: 0.5px 0.5px 8px #ffeaec
+    border: solid thin #000000;
 
 }
 
@@ -17,6 +17,8 @@
     flex-wrap: wrap-reverse;
     width: auto;
     flex-direction: inherit;
+    position: sticky;
+    top: 0;
 }
 
 .left, .right {

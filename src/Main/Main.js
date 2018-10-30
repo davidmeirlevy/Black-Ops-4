@@ -83,9 +83,9 @@ class Main extends React.Component {
                     </div>
                     <div className={'right'}>
                         <div className={'right-sub'}>Level: {this.state.level}
-                            {/*<ProgressBar*/}
-                            {/*completed={getPresentage(this.state.level, 55)}*/}
-                            {/*colors={[30, 70, 95]}/>*/}
+                            <ProgressBar
+                            completed={getPresentage(this.state.level, 55)}
+                            colors={[30, 70, 95]}/>
                         </div>
                         <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
                         {/*{getPrestigeImage(this.state.prestige)}*/}
@@ -121,7 +121,7 @@ class Main extends React.Component {
                     <Card name={'K/D Ratio'}
                           data={getShortNum(this.state.kills / this.state.deaths)}
                           sub={`Kills: ${this.state.kills}
-                                  // {/*// /!*| Deaths: ${this.state.deaths}`}/>
+                                   | Deaths: ${this.state.deaths}`}/>
                     <Card name={'EKIA (Kills + Assists) Ratio'}
                           data={getShortNum((this.state.kills + this.state.assists) / this.state.deaths)}
                           sub={`EKIA: ${this.state.assists + this.state.kills} | Death:${this.state.deaths}`}/>

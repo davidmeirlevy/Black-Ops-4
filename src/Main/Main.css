@@ -1,4 +1,5 @@
 .container {
+    align-content: center;
     display: flex;
     flex-direction: column;
     font-family: 'Titillium Web', sans-serif;
@@ -7,7 +8,7 @@
     margin: 5px;
     width: 100%;
     background-color: #1b1b1b;
-    box-shadow: 1px 1px 3px #ffeaec;
+    box-shadow: 0.5px 0.5px 8px #ffeaec
 
 }
 
@@ -15,6 +16,7 @@
     display: flex;
     flex-wrap: wrap-reverse;
     width: auto;
+    flex-direction: inherit;
 }
 
 .left, .right {
@@ -29,13 +31,10 @@
     margin: 10px;
     display: flex;
     flex-direction: row;
-    /*font-size: 2vw;*/
 
 }
 
 .right {
-
-    /*width: max-content;*/
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -45,14 +44,14 @@
 .right-sub {
 
     width: auto;
-    margin: 2px;
+    margin: 4px 10px 4px 4px;
 }
 
 .middle {
     display: flex;
     flex-wrap: wrap;
     height: auto;
-
+    justify-content: center
 }
 
 .logo {

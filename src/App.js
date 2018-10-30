@@ -6,45 +6,53 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            amount: 1,
-            list: []
+            list: [
+                {show: true, name: 'dudioudo'},
+                {show: true, name: 'WakingBrizard'},
+                {show: true, name: 'FormingSpoon801'},
+                {show: true, name: 'MenahemCohen'},
+                {show: true, name: 'SufleShokolad'},
+
+            ]
         }
+
     }
 
-    addToList = (name = 'FormingSpoon801') => {
-        const currentList = this.state.list;
-        const newUser = <Main name={name}/>;
-        currentList.push(newUser);
+    changeList = (user) => {
+        user.show = !user.show;
         this.setState({
-            list: newUser
+            user
+
         })
     };
 
 
     render() {
-
         return (
             <div>
-                <input/>
-                <button onClick={() => {
-                    this.addToList()
-                }}>Add User
-                </button>
+                {this.state.list.map((user,index) => {
+                    return (<div key={index} className={'player-list'}>
+                        <label>
+                            <input type={'checkbox'}
+                                   defaultChecked
+                                   onClick={() => {this.changeList(user)}}/>
+                            {user.name}
+                        </label>
+                    </div>)
+                })}
                 <div className={'App'}>
-                    <Main name={'FormingSpoon801'}/>
-                    {/*<Main name={'FormingSpoon801'}/>*/}
-                    {/*<Main name={'FormingSpoon801'}/>*/}
-                    {/*<Main name={'FormingSpoon801'}/>*/}
-                    {/*<Main name={'FormingSpoon801'}/>*/}
-                    {/*<Main name={'FormingSpoon801'}/>*/}
-                    {/*<Main name={'FormingSpoon801'}/>*/}
-                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {this.state.list.map((user,index) => {
+                        return user.show ?
+                            <div key={index}>
+                                <Main name={user.name}/>
+                            </div>
+                            :
+                            <div/>
+                    })}
                 </div>
-
             </div>
         );
     }
-
 }
 
 export default App

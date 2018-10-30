@@ -1,15 +1,13 @@
 
 
-.card-container ,.card-container-pie{
+.card{
     margin: 10px;
     /*animation: shadowBox 3s infinite;*/
     height: auto;
     text-align: center;
     color: #a6a6a6;
     background-color: #1f1f1f;
-
-
-
+    /*width: -webkit-fill-available;*/
 }
 
 .card-sub {
@@ -30,12 +28,6 @@
     line-height: 111px;
     background-color: #1f1f1f;
 }
-
-.background {
-
-}
-
-
 
 @keyframes shadowBox {
     0% {box-shadow: 2px 1px 18px #ff9400;}

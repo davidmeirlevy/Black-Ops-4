@@ -34,6 +34,7 @@ export const CardPie = ({name, data1, data2, sub}) => {
 export const Card = ({name, data, sub}) => {
     return (<div className={'card'}>
         <div className={'card-container'}>
+            <div className={'background'}></div>
             <div className={'card-top'}> {name}</div>
             <div className={'card-context'}>{data}</div>
             <div className={'card-sub'}>{sub} </div>

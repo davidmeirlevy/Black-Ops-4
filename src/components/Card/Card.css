@@ -2,32 +2,42 @@
 
 .card-container ,.card-container-pie{
     margin: 10px;
-    border: solid #00F9FF;
     animation: shadowBox 3s infinite;
     height: auto;
-    border-radius: 15px;
     text-align: center;
+    color: #a6a6a6;
+    background-color: #1f1f1f;
+
+
+
+}
+
+.card-sub {
+    background-color: #2a2a2a;
 }
 
 .card-top {
-    background-color: #00f9ff;
-    color: black;
-    border-bottom: solid #484848;
+    background-color: #2a2a2a;
     border-radius: 10px 10px 0 0;
-
 }
 
 .card-context {
+    color: white;
     font-size: 60px;
     height: auto;
     line-height: 111px;
+    background-color: #1f1f1f;
+}
+
+.background {
+
 }
 
 
 
 @keyframes shadowBox {
-    0% {box-shadow: 2px 1px 18px #00f9ff;}
-    50% {box-shadow: 2px 1px 5px #00999d;}
-    100% {box-shadow: 2px 1px 18px #00f9ff;}
+    0% {box-shadow: 2px 1px 18px #ff9400;}
+    50% {box-shadow: 2px 1px 5px #2b1503;}
+    100% {box-shadow: 2px 1px 18px #ff9400;}
 
 }

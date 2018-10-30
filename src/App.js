@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from "./Main/Main";
+import Statistics from "./Main/Statistics";
 import './App.css'
 
 class App extends React.Component {
@@ -30,6 +30,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
+                    <img className={'logo'}
+                         src={'https://image.ibb.co/inYpYA/07ef4a2a-37ba-4f4d-8be6-1be1b61bc102.png'}
+                         alt={'logo'}/>
                 {this.state.list.map((user,index) => {
                     return (<div key={index} className={'player-list'}>
                         <label>
@@ -44,7 +47,7 @@ class App extends React.Component {
                     {this.state.list.map((user,index) => {
                         return user.show ?
                             <div key={index}>
-                                <Main name={user.name}/>
+                                <Statistics name={user.name}/>
                             </div>
                             :
                             <div/>

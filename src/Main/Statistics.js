@@ -1,12 +1,10 @@
 import React from 'react'
-import './Main.css'
-
+import './Statistics.css'
 import {Card, CardPie} from "../components/Card/CardPie";
 import ProgressBar from 'react-progress-bar-battlenet-style';
-import {getUserData} from "../http/Search";
-import {getPresentage, getPrestigeImage, getShortNum} from "../components/Functions";
+import {getPresentage, getPrestigeImage, getShortNum, getUserData} from "../components/Functions";
 
-class Main extends React.Component {
+class Statistics extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +30,6 @@ class Main extends React.Component {
         }
     }
 
-
     componentDidMount() {
         this.getData();
     }
@@ -40,7 +37,7 @@ class Main extends React.Component {
     getData = () => {
         getUserData(this.state.username).then(({data}) => data)
             .then(({username, mp}) => {
-                // console.log(mp);
+                console.log(mp);
                 this.setState({
                     username: username,
                     level: mp['level'],
@@ -65,18 +62,13 @@ class Main extends React.Component {
     };
 
     render() {
-
         const totalShots = this.state.misses + this.state.hits;
         const totalGames = this.state.wins + this.state.losses;
         return (
             <div className={'container'} style={this.props.style}>
                 <div className={'top'}>
                     <div className={'left'}>
-                        <div>
-                            <img className={'logo'}
-                                 src={'https://image.ibb.co/inYpYA/07ef4a2a-37ba-4f4d-8be6-1be1b61bc102.png'}
-                                 alt={'logo'}/>
-                        </div>
+                        <div className={'prestige'}>{getPrestigeImage(this.state.prestige)}</div>
                         <div>
                             {this.state.username}
                         </div>
@@ -84,14 +76,13 @@ class Main extends React.Component {
                     <div className={'right'}>
                         <div className={'right-sub'}>Level: {this.state.level}
                             <ProgressBar
-                            completed={getPresentage(this.state.level, 55)}
-                            colors={[30, 70, 95]}/>
+                                completed={getPresentage(this.state.level, 55)}
+                                colors={[30, 70, 95]}/>
                         </div>
                         <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
-                        {/*{getPrestigeImage(this.state.prestige)}*/}
+
                     </div>
                 </div>
-
                 <div className={'middle'}>
                     <CardPie name={`Shots (${totalShots})`}
                              data1={getPresentage(this.state.hits, totalShots)}
@@ -120,8 +111,7 @@ class Main extends React.Component {
                           sub={(this.state.ekiaPerGame > 10 ? 'Nice!!!!' : 'Need to practise')}/>
                     <Card name={'K/D Ratio'}
                           data={getShortNum(this.state.kills / this.state.deaths)}
-                          sub={`Kills: ${this.state.kills}
-                                   | Deaths: ${this.state.deaths}`}/>
+                          sub={`Kills: ${this.state.kills}| Deaths: ${this.state.deaths}`}/>
                     <Card name={'EKIA (Kills + Assists) Ratio'}
                           data={getShortNum((this.state.kills + this.state.assists) / this.state.deaths)}
                           sub={`EKIA: ${this.state.assists + this.state.kills} | Death:${this.state.deaths}`}/>
@@ -129,7 +119,6 @@ class Main extends React.Component {
             </div>
         );
     }
-
 }
 
-export default Main;
+export default Statistics;

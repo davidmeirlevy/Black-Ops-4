@@ -27,10 +27,11 @@
 
 .left {
     flex-basis: 70%;
-    align-content: flex-start;
     margin: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+
 
 }
 
@@ -54,6 +55,11 @@
     justify-content: center
 }
 
+.prestige{
+margin: auto;
+}
+
 .logo {
     height: 100px;
 }
+

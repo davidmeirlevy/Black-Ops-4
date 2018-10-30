@@ -2,7 +2,7 @@
 
 .card-container ,.card-container-pie{
     margin: 10px;
-    animation: shadowBox 3s infinite;
+    /*animation: shadowBox 3s infinite;*/
     height: auto;
     text-align: center;
     color: #a6a6a6;
@@ -14,14 +14,16 @@
 
 .card-sub {
     background-color: #2a2a2a;
+    margin: 10px;
+    text-wrap: normal;
 }
 
 .card-top {
     background-color: #2a2a2a;
-    border-radius: 10px 10px 0 0;
 }
 
 .card-context {
+    margin: 5px;
     color: white;
     font-size: 60px;
     height: auto;

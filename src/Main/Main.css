@@ -6,12 +6,14 @@
     justify-content: space-around;
     margin: 5px;
     width: 100%;
+    background-color: #1b1b1b;
+    box-shadow: 1px 1px 3px #ffeaec;
+
 }
 
 .top {
     display: flex;
     flex-wrap: wrap-reverse;
-    border: solid orange;
     width: auto;
 }
 

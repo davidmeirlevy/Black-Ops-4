@@ -32,13 +32,13 @@ class App extends React.Component {
                 </button>
                 <div className={'App'}>
                     <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
-                    <Main name={'FormingSpoon801'}/>
+                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {/*<Main name={'FormingSpoon801'}/>*/}
+                    {/*<Main name={'FormingSpoon801'}/>*/}
                 </div>
 
             </div>

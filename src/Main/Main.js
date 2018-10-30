@@ -32,6 +32,7 @@ class Main extends React.Component {
         }
     }
 
+
     componentDidMount() {
         this.getData();
     }
@@ -64,10 +65,11 @@ class Main extends React.Component {
     };
 
     render() {
+
         const totalShots = this.state.misses + this.state.hits;
         const totalGames = this.state.wins + this.state.losses;
         return (
-            <div className={'container'}>
+            <div className={'container'} style={this.props.style}>
                 <div className={'top'}>
                     <div className={'left'}>
                         <div>
@@ -78,96 +80,51 @@ class Main extends React.Component {
                         <div>
                             {this.state.username}
                         </div>
-                        <div className={'right'}>
-                            <div className={'right-sub'}>Level: {this.state.level}
-                                <ProgressBar
-                                    completed={getPresentage(this.state.level, 55)}
-                                    colors={[30, 70, 95]}/>
-                            </div>
-                            <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
-                            {getPrestigeImage(this.state.prestige)}
-                        </div>
                     </div>
-
+                    <div className={'right'}>
+                        <div className={'right-sub'}>Level: {this.state.level}
+                            {/*<ProgressBar*/}
+                            {/*completed={getPresentage(this.state.level, 55)}*/}
+                            {/*colors={[30, 70, 95]}/>*/}
+                        </div>
+                        <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
+                        {/*{getPrestigeImage(this.state.prestige)}*/}
+                    </div>
                 </div>
+
                 <div className={'middle'}>
-                    {/*<div className={'middle-left'}>*/}
-                    {/*<div>*/}
-                    {/*<CardPie name={`Win/Lose (${totalGames})`}*/}
-                             {/*data1={getPresentage(this.state.wins, totalGames)}*/}
-                             {/*data2={getPresentage(this.state.losses, totalGames)}*/}
-                             {/*sub={`Wins: ${this.state.wins} | Losses: ${this.state.losses}`}/>*/}
-                    {/*</div>*/}
-                    {/*<div>*/}
-                    {/*<CardPie name={`Shots (${totalShots})`}*/}
-                    {/*data1={getPresentage(this.state.hits, totalShots)}*/}
-                    {/*data2={getPresentage(this.state.misses, totalShots)}*/}
-                    {/*sub={`Hits: ${this.state.hits} | Miss: ${this.state.misses}`}/>*/}
-                    {/*</div>*/}
-                    {/*</div>*/}
-                    <div className={'middle-right'}>
-                        <div>
-                            <CardPie name={`Shots (${totalShots})`}
-
-                                     data1={getPresentage(this.state.hits, totalShots)}
-                                     data2={getPresentage(this.state.misses, totalShots)}
-                                     sub={`Hits: ${this.state.hits} | Miss: ${this.state.misses}`}/>
-
-                        </div>
-                        <div>
-                            <CardPie name={`Win/Lose (${totalGames})`}
-                                     data1={getPresentage(this.state.wins, totalGames)}
-                                     data2={getPresentage(this.state.losses, totalGames)}
-                                     sub={`Wins: ${this.state.wins} | Losses: ${this.state.losses}`}/>
-                        </div>
-                        <div>
-
-                            <Card name={'Headshots'}
-
-                                  data={this.state.hs}
-                                  sub={`${getPresentage(this.state.hs, this.state.hits, false)}% of you hits are headshots`}/>
-                        </div>
-                        <div>
-
-                            <Card name={'Suicides'}
-                                  data={this.state.suicides}
-                                  sub={`${getPresentage(this.state.suicides, this.state.deaths, false)}% of you death is suicide `}/>
-                        </div>
-                        <div>
-
-                            <Card name={'Longest Kill streak'}
-                                  data={this.state.longestKillstreak}
-                                  sub={(this.state.longestKillstreak > 10 ? 'Nice!!!' : 'Try to work on yourself dude')}/>
-                        </div>
-                        <div>
-
-                            <Card name={'Damage Per Minute'} data={getShortNum(this.state.damagePerMinute, 5)}
-                                  sub={`${((this.state.damagePerMinute) / 100).toString().split('.')[0]} +/- People in minute`}/>
-                        </div>
-                        <div>
-
-                            <Card name={'Damage Per Game'}
-                                  data={getShortNum(this.state.damagePerGame)}
-                                  sub={`${((this.state.damagePerGame) / 100).toString().split('.')[0]} +/- People in game`}/>
-                        </div>
-                        <div>
-
-                            <Card name={'Avg. EKIA Per Game'}
-                                  data={getShortNum(this.state.ekiaPerGame)}
-                                  sub={(this.state.ekiaPerGame > 10 ? 'Nice!!!!' : 'Need to practise')}/>
-                        </div>
-                        <div>
-
-                            <Card name={'K/D Ratio'}
-                                  data={getShortNum(this.state.kills / this.state.deaths)}
-                                  sub={`Kills: ${this.state.kills}
-                                  | Deaths: ${this.state.deaths}`}/>
-                        </div>
-
-                        <Card name={'EKIA (Kills + Assists) Ratio'}
-                              data={getShortNum((this.state.kills + this.state.assists) / this.state.deaths)}
-                              sub={`EKIA: ${this.state.assists + this.state.kills} | Death:${this.state.deaths}`}/>
-                    </div>
+                    <CardPie name={`Shots (${totalShots})`}
+                             data1={getPresentage(this.state.hits, totalShots)}
+                             data2={getPresentage(this.state.misses, totalShots)}
+                             sub={`Hits: ${this.state.hits} | Miss: ${this.state.misses}`}/>
+                    <CardPie name={`Win/Lose (${totalGames})`}
+                             data1={getPresentage(this.state.wins, totalGames)}
+                             data2={getPresentage(this.state.losses, totalGames)}
+                             sub={`Wins: ${this.state.wins} | Losses: ${this.state.losses}`}/>
+                    <Card name={'Headshots'}
+                          data={this.state.hs}
+                          sub={`${getPresentage(this.state.hs, this.state.hits, false)}% of you hits are headshots`}/>
+                    <Card name={'Suicides'}
+                          data={this.state.suicides}
+                          sub={`${getPresentage(this.state.suicides, this.state.deaths, false)}% of you death is suicide `}/>
+                    <Card name={'Longest Kill streak'}
+                          data={this.state.longestKillstreak}
+                          sub={(this.state.longestKillstreak > 10 ? 'Nice!!!' : 'Try to work on yourself dude')}/>
+                    <Card name={'Damage Per Minute'} data={getShortNum(this.state.damagePerMinute, 5)}
+                          sub={`${((this.state.damagePerMinute) / 100).toString().split('.')[0]} +/- People in minute`}/>
+                    <Card name={'Damage Per Game'}
+                          data={getShortNum(this.state.damagePerGame)}
+                          sub={`${((this.state.damagePerGame) / 100).toString().split('.')[0]} +/- People in game`}/>
+                    <Card name={'Avg. EKIA Per Game'}
+                          data={getShortNum(this.state.ekiaPerGame)}
+                          sub={(this.state.ekiaPerGame > 10 ? 'Nice!!!!' : 'Need to practise')}/>
+                    <Card name={'K/D Ratio'}
+                          data={getShortNum(this.state.kills / this.state.deaths)}
+                          sub={`Kills: ${this.state.kills}
+                                  // {/*// /!*| Deaths: ${this.state.deaths}`}/>
+                    <Card name={'EKIA (Kills + Assists) Ratio'}
+                          data={getShortNum((this.state.kills + this.state.assists) / this.state.deaths)}
+                          sub={`EKIA: ${this.state.assists + this.state.kills} | Death:${this.state.deaths}`}/>
                 </div>
             </div>
         );
@@ -175,4 +132,4 @@ class Main extends React.Component {
 
 }
 
-export default Main
+export default Main;

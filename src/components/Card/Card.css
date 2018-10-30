@@ -15,7 +15,7 @@
 }
 
 .card-container-pie {
-    width: calc(100% + 34%);
+    width: calc(100% - 25%);
     height: auto;
 }
 

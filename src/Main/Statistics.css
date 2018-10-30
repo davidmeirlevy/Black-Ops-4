@@ -20,6 +20,7 @@
 }
 
 .left, .right {
+    background-color: rgba(0,0,0,0.5);
     flex-wrap: wrap;
     text-align: left;
 

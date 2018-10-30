@@ -26,7 +26,8 @@ class Statistics extends React.Component {
             ekia: 0,
             deaths: 0,
             kills: 0,
-            assists: 0
+            assists: 0,
+            timePlayedTotal: 0
         }
     }
 
@@ -35,7 +36,7 @@ class Statistics extends React.Component {
     }
 
     getData = () => {
-        getUserData(this.state.username).then(({data}) => data)
+        getUserData(this.state.username)
             .then(({username, mp}) => {
                 console.log(mp);
                 this.setState({
@@ -56,31 +57,41 @@ class Statistics extends React.Component {
                     ekia: mp['lifetime'].all['ekia'],
                     deaths: mp['lifetime'].all['deaths'],
                     kills: mp['lifetime'].all['kills'],
-                    assists: mp['lifetime'].all['assists']
+                    assists: mp['lifetime'].all['assists'],
+                    timePlayedTotal: mp['lifetime'].all['timePlayedTotal']
                 })
             });
     };
 
+    getTimePlayed = (time) => {
+        const h = (time / 60) / 60;
+        return (h).toString().slice(0, 4)
+    };
+
     render() {
+        const style = {
+            backgroundImage: `url(${getPrestigeImage(this.state.prestige)})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+        };
         const totalShots = this.state.misses + this.state.hits;
         const totalGames = this.state.wins + this.state.losses;
         return (
-            <div className={'container'} style={this.props.style}>
-                <div className={'top'}>
-                    <div className={'left'}>
-                        <div className={'prestige'}>{getPrestigeImage(this.state.prestige)}</div>
-                        <div>
-                            {this.state.username}
+            <div className={'container'}>
+                <div className={'top'} style={style}>
+                        <div className={'left'} >
+                            <div >
+                                {this.state.username}
+                            </div>
                         </div>
-                    </div>
-                    <div className={'right'}>
-                        <div className={'right-sub'}>Level: {this.state.level}
-                            <ProgressBar
-                                completed={getPresentage(this.state.level, 55)}
-                                colors={[30, 70, 95]}/>
-                        </div>
-                        <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
-
+                        <div className={'right'}>
+                            <div className={'right-sub'}>Level: {this.state.level}
+                                <ProgressBar
+                                    completed={getPresentage(this.state.level, 55)}
+                                    colors={[30, 70, 95]}/>
+                            </div>
+                            <div className={'right-sub'}>Prestige: {this.state.prestige}</div>
                     </div>
                 </div>
                 <div className={'middle'}>
@@ -115,6 +126,9 @@ class Statistics extends React.Component {
                     <Card name={'EKIA (Kills + Assists) Ratio'}
                           data={getShortNum((this.state.kills + this.state.assists) / this.state.deaths)}
                           sub={`EKIA: ${this.state.assists + this.state.kills} | Death:${this.state.deaths}`}/>
+                    <Card name={'Time Played'}
+                          data={this.getTimePlayed(this.state.timePlayedTotal)}
+                          sub={'Time in total'}/>
                 </div>
             </div>
         );

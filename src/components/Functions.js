@@ -1,4 +1,3 @@
-import React from 'react'
 export const getPresentage = (num, total, bool = true) => {
     return (bool ? Math.floor((num / total) * 100) : ((num / total)).toString().slice(0, 6));
 };
@@ -21,18 +20,17 @@ export const getPrestigeImage = (num) => {
                 'https://image.ibb.co/mZvHmV/L9.png',
                 'https://image.ibb.co/dzGe0q/L10.png'
             ];
-        const style = {
-            height:'100px',
-            width:'100px',
-        };
-        return (num !== 0 ? <img style={style} src={list[num]} alt={'pre'}/> :''  )
+
+        return list[num]
     };
 
 export const getUserData = (name) => {
     const URL = `https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/${name}/profile/`;
     return fetch(URL, {
         headers: {'Access-Control-Allow-Origin': '*',}})
-        .then(res => res.json())
+        .then(res => res.json()).then(({data}) => {
+            return data;
+        })
 
 };
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Statistics from "./Main/Statistics";
+import Statistics from "./Container/Statistics/Statistics";
 import './App.css'
 
 class App extends React.Component {
@@ -7,22 +7,18 @@ class App extends React.Component {
         super(props);
         this.state = {
             list: [
-                {show: true, name: 'dudioudo'},
-                {show: true, name: 'WakingBrizard'},
-                {show: true, name: 'FormingSpoon801'},
-                {show: true, name: 'MenahemCohen'},
-                {show: true, name: 'SufleShokolad'},
-
+                {show: true, name: 'dudioudo',color:'red'},
+                {show: true, name: 'WakingBrizard',color:'blue'},
+                {show: true, name: 'FormingSpoon801',color:'green'},
+                {show: true, name: 'MenahemCohen',color:'white'},
+                {show: true, name: 'SufleShokolad',color:'yellow'},
             ]
         }
-
     }
-
     changeList = (user) => {
         user.show = !user.show;
         this.setState({
             user
-
         })
     };
 
@@ -46,8 +42,8 @@ class App extends React.Component {
                 <div className={'App'}>
                     {this.state.list.map((user,index) => {
                         return user.show ?
-                            <div key={index}>
-                                <Statistics name={user.name}/>
+                            <div key={index} className={'statistic-container'}>
+                                <Statistics name={user.name} color={user.color}/>
                             </div>
                             :
                             <div/>

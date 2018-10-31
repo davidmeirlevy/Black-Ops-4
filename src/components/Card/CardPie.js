@@ -2,8 +2,6 @@ import React from "react";
 import './Card.css'
 import {Doughnut} from 'react-chartjs-2';
 export const CardPie = ({name, data1, data2, sub}) => {
-    const orange = '#b27b00';
-    const blackOrange = '#6e4c00';
     const data = {
         labels: [
             `${data1}%`,
@@ -21,6 +19,7 @@ export const CardPie = ({name, data1, data2, sub}) => {
             ]
         }]
     };
+
     return (<div className={'card'}>
         <div className={'card-container-pie'}>
             <div className={'card-top'}>{name}</div>

@@ -10,18 +10,29 @@
     background-color: #1b1b1b;
     border: solid thin #000000;
 
+
+}
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
+
 }
 
 .top {
+    animation-delay: 3s;
     display: flex;
     flex-wrap: wrap-reverse;
     width: auto;
     flex-direction: inherit;
     position: sticky;
     top: 0;
+    margin: 5px;
 }
 
 .left, .right {
+    /*animation: fade-in 4s;*/
+
     background-color: rgba(0,0,0,0.5);
     flex-wrap: wrap;
     text-align: left;
@@ -39,6 +50,8 @@
 }
 
 .right {
+    /*animation: fade-in 4s;*/
+
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -52,6 +65,7 @@
 }
 
 .middle {
+
     display: flex;
     flex-wrap: wrap;
     height: auto;

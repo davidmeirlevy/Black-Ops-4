@@ -1,4 +1,8 @@
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
 
+}
 
 .card{
     margin: 10px;
@@ -17,11 +21,12 @@
 }
 
 .card-top {
-    /*animation: shadowBox 3s infinite;*/
     background-color: #2a2a2a;
 }
 
 .card-context {
+    animation: fade-in 2s linear;
+    animation-duration: inherit;
     margin: 5px;
     color: white;
     font-size: 60px;
@@ -30,9 +35,3 @@
     background-color: #1f1f1f;
 }
 
-@keyframes shadowBox {
-    0% {box-shadow: 2px 1px 18px #ff9400;}
-    50% {box-shadow: 2px 1px 5px #2b1503;}
-    100% {box-shadow: 2px 1px 18px #ff9400;}
-
-}

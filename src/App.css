@@ -1,5 +1,4 @@
 .App {
-    background-color: black;
     color: orange;
     display: flex;
 }
@@ -12,7 +11,18 @@
 }
 
 .player-list:hover {
-    color: red;
+    animation: colorChenger 2s linear infinite;
+}
+
+@keyframes colorChenger {
+    0% {color: #ff9400;}
+    50% {color:  #2b1503;}
+    100% {color:  #ff9400;}
+
+}
+
+.statistic-container{
+    margin: 5px;
 }
 
 

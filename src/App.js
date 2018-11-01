@@ -3,19 +3,20 @@ import Statistics from "./Container/Statistics/Statistics";
 import './App.css'
 import {Logo} from "./components/Functions";
 import {TestGraph} from "./components/Card/CardPie";
+import {HorizontalBar} from "react-chartjs-2";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             list: [
-                {show: true, name: 'dudioudo', color: 'red', data: []},
-                {show: true, name: 'WakingBrizard', color: 'blue', data: []},
-                {show: true, name: 'FormingSpoon801', color: 'green', data: []},
-                {show: true, name: 'MenahemCohen', color: 'white', data: []},
-                {show: true, name: 'SufleShokolad', color: 'yellow', data: []},
+                {show: true, name: 'dudioudo', color: '255, 0, 0', data: []},
+                {show: true, name: 'WakingBrizard', color: '0, 0, 255', data: []},
+                {show: true, name: 'FormingSpoon801', color: '0, 255, 0', data: []},
+                {show: true, name: 'MenahemCohen', color: '0, 0, 0', data: []},
+                {show: true, name: 'SufleShokolad', color: '255,255,0', data: []},
             ],
-            com:false
+            com: false
         }
     }
 
@@ -38,11 +39,23 @@ class App extends React.Component {
         })
     };
 
-    showComper = () =>{
-        this.setState({com: true})
+    showComper = () => {
+        this.setState({com: !this.state.com})
+    };
+
+    getAllUsers = () => {
+        return this.state.list.map(x => ({data: x.data, color: x.color}));
     };
 
     render() {
+        const myS = ['level',
+            'hits',
+            'hs', 'wins',
+            'suicides',
+            'longestKillstreak', 'damagePerMinute', 'damagePerGame', 'headshotPercentage',
+            'ekiaPerGame', 'ekia', 'deaths', 'kills', 'assists'
+        ];
+        const users = this.getAllUsers();
         return (
             <div>
                 <Logo/>
@@ -58,34 +71,33 @@ class App extends React.Component {
                         </label>
                     </div>)
                 })}
-                <div className={'App'}>
-                    {this.state.list.map((user, index) => {
-                        return user.show ?
-                            <div key={index} className={'statistic-container'}>
-                                <Statistics name={user.name}
-                                            color={user.color}
-                                            dataToParent={this.dataFromChild}/>
-                            </div>
-                            :
-                            <div/>
-                    })}
-                </div>
+                <button onClick={() => this.showComper()}>Click</button>
                 {
-
-                    this.state.com
+                    !this.state.com
                         ?
-                        <div style={{backgroundColor:'white'}}>
-                            <TestGraph userA={this.state.list[0].data}
-                                       userB={this.state.list[1].data}
-                                       userC={this.state.list[2].data}
-                                       userD={this.state.list[3].data}
-                                       userE={this.state.list[4].data}
-                            />
+                        <div className={'App'}>
+                            {this.state.list.map((user, index) => {
+                                return user.show ?
+                                    <div key={index} className={'statistic-container'}>
+                                        <Statistics name={user.name}
+                                                    color={user.color}
+                                                    dataToParent={this.dataFromChild}/>
+                                    </div>
+                                    :
+                                    <div/>
+                            })}
                         </div>
-                    :
-                    <button onClick={()=>this.showComper()}>Click</button>
+                        :
+                        <div className={'graph'}>
+                            {
+                                myS.map((lable, index) => {
+                                    return (<div key={index}>
+                                        <TestGraph name={users} lable={lable}/>
+                                    </div>)
+                                })
+                            }
+                        </div>
                 }
-
             </div>
         );
     }

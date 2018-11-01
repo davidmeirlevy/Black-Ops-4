@@ -20,7 +20,11 @@
     100% {color:  #ff9400;}
 
 }
+.graph {
+    display: flex;
+    flex-wrap: wrap;
 
+}
 .statistic-container{
     margin: 5px;
 }

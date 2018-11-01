@@ -1,4 +1,5 @@
 .container {
+    animation: fade-in 0.5s;
     align-content: center;
     display: flex;
     flex-direction: column;
@@ -9,17 +10,10 @@
     width: 100%;
     background-color: #1b1b1b;
     border: solid thin #000000;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
 
 }
+
+
 
 .top {
     display: flex;

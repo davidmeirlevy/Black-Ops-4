@@ -1,6 +1,7 @@
 .App {
     color: orange;
     display: flex;
+
 }
 
 .player-list{
@@ -14,16 +15,16 @@
     animation: colorChenger 2s linear infinite;
 }
 
-@keyframes colorChenger {
-    0% {color: #ff9400;}
-    50% {color:  #2b1503;}
-    100% {color:  #ff9400;}
+@keyframes fade-in {
+    from {opacity: 0}
+    to {
+        opacity: 1}
 
 }
 .graph {
     display: flex;
     flex-wrap: wrap;
-
+    animation: fade-in 2s ;
 }
 .statistic-container{
     margin: 5px;

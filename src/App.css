@@ -25,6 +25,7 @@
     display: flex;
     flex-wrap: wrap;
     animation: fade-in 2s ;
+    justify-content: center;
 }
 .statistic-container{
     margin: 5px;

@@ -1,7 +1,7 @@
 .App {
     color: orange;
     display: flex;
-
+    flex-direction: row;
 }
 
 .player-list{
@@ -32,3 +32,18 @@
 }
 
 
+@media (max-width: 12450px) {
+.App{
+    color: orange;
+    display: flex;
+    flex-direction: row;
+}
+}
+
+@media (max-width: 500px) {
+    .App{
+        color: orange;
+        display: flex;
+        flex-direction: column;
+    }
+}

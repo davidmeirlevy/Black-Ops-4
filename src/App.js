@@ -71,7 +71,9 @@ class App extends React.Component {
                         </label>
                     </div>)
                 })}
-                <button onClick={() => this.showComper()}>Click</button>
+                <button onClick={() => this.showComper()}>
+                    {`To the ${(!this.state.com? 'Graph' : 'Statistics')} page`}
+                </button>
                 {
                     !this.state.com
                         ?

@@ -7,11 +7,9 @@
     justify-content: space-around;
     width: 100%;
     background-color: #1b1b1b;
-    border: solid thin #000000;
+    border: solid thin #e6a414;
 
 }
-
-
 
 .top {
     display: flex;
@@ -68,7 +66,7 @@
     height: 100px;
 }
 
-.card-wrapper{
+.card-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -78,3 +76,24 @@
     margin-left: 10px;
 }
 
+.test-pageing {
+    display: flex;
+}
+
+.test-pageing-item:active {
+    background-color: gray;
+    color: #e6a414;
+}
+
+
+
+.testCallse{
+    display: flex;
+    margin-bottom: -1px;
+}
+
+.pagination-border {
+    border: solid thin #e6a414;
+    margin-right: 2px;
+    margin-left: 1px;
+}

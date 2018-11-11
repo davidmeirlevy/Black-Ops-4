@@ -1,9 +1,10 @@
 import React from 'react'
 import './Statistics.css'
 import ProgressBar from 'react-progress-bar-battlenet-style';
-import {Card, CardPie} from "../../components/Card/CardPie";
-import {fixName, getPresentage, getPrestigeImage, getShortNum} from "../../Functions/Functions";
+import {Card} from "../../components/Card/CardPie";
+import {getPresentage, getPrestigeImage} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
+import Pageing from "./Pageing";
 
 
 class Statistics extends React.Component {
@@ -17,7 +18,7 @@ class Statistics extends React.Component {
                 level: null,
                 prestige: 0,
             },
-            isLoading: true
+            page: ''
         }
     }
 
@@ -28,7 +29,6 @@ class Statistics extends React.Component {
     getData = (username) => {
         getUserData(username)
             .then(({data}) => {
-                console.log(data);
                 const username = data.username;
                 const prestige = data.prestige;
                 const level = data.mp.level;
@@ -39,7 +39,9 @@ class Statistics extends React.Component {
                         username: username,
                         level: level,
                         prestig: prestige,
-                    }
+                    },
+                    page: 'Team Deathmatch'
+
                 });
                 this.setState({isLoading: false});
                 this.setState({
@@ -50,15 +52,6 @@ class Statistics extends React.Component {
                     }))
                 });
             });
-    };
-
-    getTimePlayed = (time) => {
-        const h = (time / 60) / 60;
-        return (h).toString().slice(0, 4)
-    };
-
-    prestigeImage = () => {
-        return {};
     };
 
     Top = () => {
@@ -86,48 +79,85 @@ class Statistics extends React.Component {
             </div>)
     };
 
-    Tags = () => {
-        return ['Kill', 'Ekia','All'];
+    teamDeathMatch = () => {
+        const list = (this.state.temp !== null ? this.state.temp : []);
+        return (
+            <div className={'middel'}>
+                <div className={'card-wrapper'}>
+                    {list.length > 0
+                        ?
+                        list.map((x, index) => {
+                            return x.action.toLowerCase().includes(this.state.query) ?
+                                <div key={index}>
+                                    <Card name={x.action} data={x.result}/>
+                                </div>
+                                :
+                                <div key={index} hidden={true}/>
+                        })
+                        :
+                        <div/>
+                    }
+                </div>
+            </div>
+
+
+        );
     };
 
+    list = (page) => {
+        switch (page) {
+            case 'BlackOut':
+                return (<div>Coming soon...</div>);
+            case 'Team Deathmatch':
+                return this.teamDeathMatch();
+            default:
+
+        }
+    };
+    outPage = () => {
+        return {
+            marginLeft: "1px",
+            border: "#e6a414 solid thin",
+            borderRadius: "10px 10px 0 0",
+            borderBottom: "#e6a414 solid thin",
+            color:'#553400',
+            backgroundColor: 'black',
+            shdowBox: '10px 10px 10px white',
+            padding: '10px'
+
+        }
+    };
+
+    inPage = () => {
+        return {
+            backgroundColor: '#1b1b1b',
+            padding: '10px',
+            marginLeft: "1px",
+            border: "#e6a414 solid thin",
+            borderRadius: "10px 10px 0 0",
+            borderBottom: "none",
+        }
+    };
 
     render() {
-        const tags = this.Tags();
         const currentUserColor = {border: `solid thin ${this.props.color}`};
-        const list = (this.state.temp !== null ? this.state.temp : []);
         return (
             <div className={'container'} style={currentUserColor}>
                 {
                     <div>
                         {this.Top()}
-                        <div >
-                            <input onChange={(event) => {
-                                this.setState({query: event.target.value.toString().replace(' ', '')})
-                            }}/>
-                            Tags:
-                            {
-                                tags.map((tag, index) =>
-                                    <li className={'tag-list'} key={index} onClick={() => this.setState({query: tag.toLowerCase()})}>{tag}</li>
-                                )
-                            }
-
-                            <div className={'card-wrapper'}>
-                                {list.length > 0
-                                    ?
-                                    list.map((x, index) => {
-                                        return x.action.toLowerCase().includes(this.state.query) ?
-                                            <div key={index}>
-                                                <Card name={x.action} data={x.result}/>
-                                            </div>
-                                            :
-                                            <div key={index} hidden={true}/>
-
-
-                                    })
-                                    :
-                                    <div/>
-                                }
+                        <div className={'testCallse'}>
+                            <div style={this.state.page === 'Team Deathmatch' ? this.inPage() : this.outPage()}
+                                 onClick={() => this.setState({page: 'Team Deathmatch'})}>Team Deathmatch
                             </div>
+                            <div style={this.state.page !== 'Team Deathmatch' ? this.inPage() : this.outPage()}
+                                 onClick={() => this.setState({page: 'BlackOut'})}>BlackOut
+                            </div>
+                        </div>
+                        <div className={'pagination-border'}>
+                            {
+                                this.list(this.state.page)
+                            }
                         </div>
                     </div>
                 }
@@ -137,3 +167,4 @@ class Statistics extends React.Component {
 }
 
 export default Statistics;
+

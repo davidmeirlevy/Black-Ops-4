@@ -1,5 +1,4 @@
 {
-  "proxy": "http://localhost:5000/",
   "homepage": "https://mulitu.github.io/Black-Ops-4/",
   "name": "call_of_duty_4",
   "version": "0.1.0",

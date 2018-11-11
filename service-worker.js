@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/Black-Ops-4/precache-manifest.edf78896188b50f2149808f64cf0a40a.js"
+  "/Black-Ops-4/precache-manifest.5bb54e56ad5c3e024f63c0ceba02a934.js"
 );
 
 workbox.clientsClaim();

@@ -1,6 +1,7 @@
 import React from "react";
 import './Card.css'
-import {HorizontalBar,Bar, Doughnut} from 'react-chartjs-2';
+import {Bar, Doughnut} from 'react-chartjs-2';
+import {fixName} from "../../Functions/Functions";
 
 export const CardPie = ({name, data1, data2, sub}) => {
     const data = {
@@ -39,18 +40,20 @@ export const CardPie = ({name, data1, data2, sub}) => {
 export const Card = ({name, data, sub}) => {
     return (<div className={'card'}>
         <div className={'card-container'}>
-            <div className={'card-top'}> {name}</div>
-            <div className={'card-context'}>{data}</div>
+            <div className={'card-top'}> {fixName(name)}</div>
+            <div className={'card-context'}>
+                {(data.toString().split('').length > 10 ?
+                    data.toString().slice(0, 6) : data)}
+            </div>
             <div className={'card-sub'}>{sub} </div>
         </div>
     </div>)
 };
 
-
-export const TestGraph = ({name,lable}) => {
-    const data ={
-        lable:[lable],
-        datasets:[],
+export const TestGraph = ({name, lable}) => {
+    const data = {
+        lable: [lable],
+        datasets: [],
         options: {
             title: {
                 display: true,
@@ -58,26 +61,21 @@ export const TestGraph = ({name,lable}) => {
             }
         }
     };
-
-
-
     const test = name.map(user => createDataForGraph(user.data['username'], user.data[lable], user.color));
-    test.map(x=>data.datasets.push(x));
+    test.map(x => data.datasets.push(x));
     return <div className={'card'}>
         <div className={'graph-mini'} style={{backgroundColor: 'white'}}>
-            <div className={'card-container-pie'} >
-                <div className={'card-top'}>{(lable).split('')[0].toUpperCase()+
+            <div className={'card-container-pie'}>
+                <div className={'card-top'}>{(lable).split('')[0].toUpperCase() +
                 lable.split('').slice(1)
-                    .map(letter =>(letter === letter.toUpperCase()
+                    .map(letter => (letter === letter.toUpperCase()
                         ? ` ${letter}`
                         : letter)).join('')}
-
-                    </div>
-
-                <Bar style={{backgroundColor: 'white', color:'white'}}
-                    width={300}
-                               height={300} data={data}/>
-                <div className={'card-sub'}>test </div>
+                </div>
+                <Bar style={{backgroundColor: 'white', color: 'white'}}
+                     width={300}
+                     height={300} data={data}/>
+                <div className={'card-sub'}>test</div>
             </div>
         </div>
 
@@ -85,7 +83,6 @@ export const TestGraph = ({name,lable}) => {
 
 
 };
-
 
 export const createDataForGraph = (name, data, color) => {
     return {

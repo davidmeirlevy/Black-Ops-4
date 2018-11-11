@@ -1,36 +1,26 @@
 import React from 'react'
 import Statistics from "./Container/Statistics/Statistics";
 import './App.css'
-import {Logo} from "./components/Functions";
+import {Logo} from "./Functions/Functions";
 import {TestGraph} from "./components/Card/CardPie";
-import {HorizontalBar} from "react-chartjs-2";
+import {Loading} from "./components/Loading/Loading";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: [
-                {show: true, name: 'dudioudo', color: '255, 0, 0', data: []},
-                {show: true, name: 'WakingBrizard', color: '0, 0, 255', data: []},
-                {show: true, name: 'FormingSpoon801', color: '0, 255, 0', data: []},
-                {show: true, name: 'MenahemCohen', color: '0, 0, 0', data: []},
-                {show: true, name: 'SufleShokolad', color: '255,255,0', data: []},
-            ],
+            list: [],
             com: false
         }
     }
 
+
     componentDidMount() {
-        console.log('mounted', this.state)
+        this.setState({
+            list: list()
+        })
     }
 
-    dataFromChild = (name, data) => {
-        const currentUser = this.state.list.find(user => user.name === name);
-        currentUser.data = data;
-        this.setState({
-            currentUser
-        });
-    };
 
     changeList = (user) => {
         user.show = !user.show;
@@ -39,7 +29,7 @@ class App extends React.Component {
         })
     };
 
-    showComper = () => {
+    clickHendler = () => {
         this.setState({com: !this.state.com})
     };
 
@@ -48,10 +38,7 @@ class App extends React.Component {
     };
 
     render() {
-        const myS = ['level',
-            'hits',
-            'hs', 'wins',
-            'suicides',
+        const labels = ['level', 'hits', 'hs', 'wins', 'suicides',
             'longestKillstreak', 'damagePerMinute', 'damagePerGame', 'headshotPercentage',
             'ekiaPerGame', 'ekia', 'deaths', 'kills', 'assists'
         ];
@@ -59,40 +46,31 @@ class App extends React.Component {
         return (
             <div>
                 <Logo/>
-                {this.state.list.map((user, index) => {
-                    return (<div key={index} className={'player-list'}>
-                        <label>
-                            <input type={'checkbox'}
-                                   defaultChecked
-                                   onClick={() => {
-                                       this.changeList(user)
-                                   }}/>
-                            {user.name}
-                        </label>
-                    </div>)
-                })}
-                <button onClick={() => this.showComper()}>
-                    {`To the ${(!this.state.com? 'Graph' : 'Statistics')} page`}
-                </button>
                 {
-                    !this.state.com
+                    users.length >= 1
                         ?
                         <div className={'App'}>
                             {this.state.list.map((user, index) => {
-                                return user.show ?
+                                return users.length > 0 ?
+
                                     <div key={index} className={'statistic-container'}>
+                                        <button onClick={() => this.clickHendler()}>
+                                            {`To the ${(!this.state.com ? 'Graph' : 'Statistics')} page`}
+                                        </button>
                                         <Statistics name={user.name}
-                                                    color={user.color}
-                                                    dataToParent={this.dataFromChild}/>
+                                                    color={`rgb(${user.color})`}/>
                                     </div>
                                     :
-                                    <div/>
+                                    <div key={index}>
+                                        <Loading/>
+                                    </div>
+
                             })}
                         </div>
                         :
                         <div className={'graph'}>
                             {
-                                myS.map((lable, index) => {
+                                labels.map((lable, index) => {
                                     return (<div key={index}>
                                         <TestGraph name={users} lable={lable}/>
                                     </div>)
@@ -107,3 +85,12 @@ class App extends React.Component {
 
 export default App
 
+export const list = () => {
+    return [
+        // {name: 'dudioudo', color: '255, 0, 0', data: [], friends: []},
+        // {show: true, name: 'WakingBrizard', color: '0, 0, 255', data: []},
+        {show: true, name: 'FormingSpoon801', color: '0, 255, 0', data: []},
+        // {show: true, name: 'MenahemCohen', color: '0, 0, 0', data: []},
+        // {show: true, name: 'SufleShokolad', color: '255,255,0', data: []},
+    ]
+}

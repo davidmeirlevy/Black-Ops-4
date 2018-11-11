@@ -1,0 +1,17 @@
+.loading-spinner {
+    font-size: 50px;
+    transform: rotate(90deg);
+    animation: loading-spinner 2s linear infinite;
+}
+
+@keyframes loading-spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+
+    }
+}
+
+

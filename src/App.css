@@ -4,7 +4,7 @@
     flex-direction: row;
 }
 
-.player-list{
+.player-list {
     display: inline;
     margin: 10px;
     font-family: 'Titillium Web', sans-serif;
@@ -16,34 +16,39 @@
 }
 
 @keyframes fade-in {
-    from {opacity: 0}
+    from {
+        opacity: 0
+    }
     to {
-        opacity: 1}
+        opacity: 1
+    }
 
 }
+
 .graph {
     display: flex;
     flex-wrap: wrap;
-    animation: fade-in 2s ;
+    animation: fade-in 2s;
     justify-content: center;
 }
-.statistic-container{
+
+.statistic-container {
     margin: 5px;
 }
 
+/*@media (max-width: 12450px) {*/
+    /*.App {*/
+        /*color: orange;*/
+        /*display: flex;*/
+        /*flex-direction: row;*/
+    /*}*/
+/*}*/
 
-@media (max-width: 12450px) {
-.App{
-    color: orange;
-    display: flex;
-    flex-direction: row;
-}
-}
+/*@media (max-width: 500px) {*/
+    /*.App {*/
+        /*color: orange;*/
+        /*display: flex;*/
+        /*flex-direction: column;*/
+    /*}*/
+/*}*/
 
-@media (max-width: 500px) {
-    .App{
-        color: orange;
-        display: flex;
-        flex-direction: column;
-    }
-}

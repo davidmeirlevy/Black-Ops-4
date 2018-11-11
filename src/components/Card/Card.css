@@ -1,7 +1,7 @@
 
-@keyframes fade-in {
-    from {opacity: 0}
-    to {opacity: 1}
+@keyframes myBlur {
+    from {filter: blur(1.5rem);}
+    to {filter:blur(0px)}
 
 }
 
@@ -9,12 +9,14 @@
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
     margin: 10px;
+    animation: myBlur 1s linear;
     text-align: center;
     color: #a6a6a6;
-    height: fit-content;
+    min-height: 190px;
+    max-height: 390px;
     background-color: #1f1f1f;
-    width: -webkit-fill-available;
     max-width: 290px;
+    min-width: 290px;
 
 }
 
@@ -27,6 +29,8 @@
 
 .card-top {
     background-color: #2a2a2a;
+    color: orange;
+
 }
 
 .card-context {

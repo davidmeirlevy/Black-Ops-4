@@ -2,7 +2,6 @@ import React from 'react'
 import Statistics from "./Container/Statistics/Statistics";
 import './App.css'
 import {Logo} from "./Functions/Functions";
-import {TestGraph} from "./components/Card/CardPie";
 import {Loading} from "./components/Loading/Loading";
 
 class App extends React.Component {
@@ -21,16 +20,11 @@ class App extends React.Component {
         })
     }
 
-
     changeList = (user) => {
         user.show = !user.show;
         this.setState({
             user
         })
-    };
-
-    clickHendler = () => {
-        this.setState({com: !this.state.com})
     };
 
     getAllUsers = () => {

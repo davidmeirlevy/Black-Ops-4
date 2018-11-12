@@ -1,10 +1,10 @@
 import React from 'react'
 import './Statistics.css'
-import ProgressBar from 'react-progress-bar-battlenet-style';
 import {Card} from "../../components/Card/CardPie";
 import {getPresentage, getPrestigeImage} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
-import Pageing from "./Pageing";
+import {Loading} from "../../components/Loading/Loading";
+import Blackout from "../Blackout/Blackout";
 
 
 class Statistics extends React.Component {
@@ -29,27 +29,19 @@ class Statistics extends React.Component {
     getData = (username) => {
         getUserData(username)
             .then(({data}) => {
-                const username = data.username;
-                const prestige = data.prestige;
-                const level = data.mp.level;
+                console.log(data);
+                const {username } = data;
+                const {level,prestige} = data.mp;
                 const multiplayerData = data.mp.lifetime.all;
                 this.setState({
-                    temp: multiplayerData,
+                    temp: Object.keys(multiplayerData).map(x => Object.assign({action: x, result: multiplayerData[x]})),
                     playerStats: {
                         username: username,
                         level: level,
-                        prestig: prestige,
+                        prestige: prestige,
                     },
                     page: 'Team Deathmatch'
 
-                });
-                this.setState({isLoading: false});
-                this.setState({
-                    temp: Object.keys(this.state.temp).map(x => Object.assign({
-                        action: x,
-                        result: this.state.temp[x],
-                        show: true
-                    }))
                 });
             });
     };
@@ -70,9 +62,6 @@ class Statistics extends React.Component {
                 </div>
                 <div className={'right'}>
                     <div className={'right-sub'}>Level: {this.state.playerStats.level}
-                        <ProgressBar
-                            completed={getPresentage(this.state.playerStats.level, 55)}
-                            colors={[30, 70, 95]}/>
                     </div>
                     <div className={'right-sub'}>Prestige: {this.state.playerStats.prestige}</div>
                 </div>
@@ -80,22 +69,19 @@ class Statistics extends React.Component {
     };
 
     teamDeathMatch = () => {
-        const list = (this.state.temp !== null ? this.state.temp : []);
+        const list = this.state.temp;
         return (
             <div className={'middel'}>
                 <div className={'card-wrapper'}>
-                    {list.length > 0
-                        ?
+                    {
                         list.map((x, index) => {
                             return x.action.toLowerCase().includes(this.state.query) ?
                                 <div key={index}>
                                     <Card name={x.action} data={x.result}/>
                                 </div>
                                 :
-                                <div key={index} hidden={true}/>
+                                <div>Loading...</div>
                         })
-                        :
-                        <div/>
                     }
                 </div>
             </div>
@@ -104,23 +90,24 @@ class Statistics extends React.Component {
         );
     };
 
-    list = (page) => {
+    pages = (page) => {
         switch (page) {
             case 'BlackOut':
-                return (<div>Coming soon...</div>);
+                return <Blackout/>;
             case 'Team Deathmatch':
                 return this.teamDeathMatch();
             default:
 
         }
     };
+
     outPage = () => {
         return {
             marginLeft: "1px",
             border: "#e6a414 solid thin",
             borderRadius: "10px 10px 0 0",
             borderBottom: "#e6a414 solid thin",
-            color:'#553400',
+            color: '#553400',
             backgroundColor: 'black',
             shdowBox: '10px 10px 10px white',
             padding: '10px'
@@ -140,25 +127,40 @@ class Statistics extends React.Component {
     };
 
     render() {
-        const currentUserColor = {border: `solid thin ${this.props.color}`};
+        const list = (this.state.temp !== null ? this.state.temp : []);
         return (
-            <div className={'container'} style={currentUserColor}>
+            <div className={'container'} style={{border: `solid thin ${this.props.color}`}}>
                 {
                     <div>
                         {this.Top()}
-                        <div className={'testCallse'}>
-                            <div style={this.state.page === 'Team Deathmatch' ? this.inPage() : this.outPage()}
-                                 onClick={() => this.setState({page: 'Team Deathmatch'})}>Team Deathmatch
-                            </div>
-                            <div style={this.state.page !== 'Team Deathmatch' ? this.inPage() : this.outPage()}
-                                 onClick={() => this.setState({page: 'BlackOut'})}>BlackOut
-                            </div>
-                        </div>
-                        <div className={'pagination-border'}>
-                            {
-                                this.list(this.state.page)
-                            }
-                        </div>
+                        {
+                            list.length > 0
+                                ?
+                                <div>
+                                    <div className={'testCallse'}>
+                                        <div
+                                            style={this.state.page === 'Team Deathmatch' ? this.inPage() : this.outPage()}
+                                            onClick={() => this.setState({page: 'Team Deathmatch'})}>Team Deathmatch
+                                        </div>
+                                        <div
+                                            style={this.state.page !== 'Team Deathmatch' ? this.inPage() : this.outPage()}
+                                            onClick={() => this.setState({page: 'BlackOut'})}>BlackOut
+                                        </div>
+                                    </div>
+                                    <div className={'pagination-border'}>
+                                        {
+                                            this.pages(this.state.page)
+                                        }
+                                    </div>
+                                </div>
+
+
+                                :
+                                <Loading/>
+
+
+                        }
+
                     </div>
                 }
             </div>

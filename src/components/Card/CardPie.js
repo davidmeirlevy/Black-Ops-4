@@ -1,40 +1,21 @@
 import React from "react";
 import './Card.css'
-import {Bar, Doughnut} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 import {fixName} from "../../Functions/Functions";
 
-export const CardPie = ({name, data1, data2, sub}) => {
-    const data = {
-        labels: [
-            `${data1}%`,
-            `${data2}%`
-        ],
-        datasets: [{
-            data: [data1, data2],
-            backgroundColor: [
-                '#ff9202',
-                '#694603',
-            ],
-            hoverBackgroundColor: [
-                '#ff9202',
-                '#694603',
-            ]
-        }]
-    };
-
-    return (<div className={'card'}>
-        <div className={'card-container-pie'}>
-            <div className={'card-top'}>{name}</div>
-
-            <Doughnut data={data}
-                      width={150}
-                      height={100}
-                      options={{
-                          maintainAspectRatio: false
-                      }}/>
-            <div className={'card-sub'}>{sub} </div>
-        </div>
-    </div>)
+export const CardPie = ({name, data}) => {
+    console.log(data);
+    const avg = data?data.reduce((a, b) => a + b):0;
+    const mydata = createDataForGraph(name, data, avg / 20);
+    return (
+        <div className={'card-chart'}>
+            <Line
+                data={mydata}
+                height={200}
+                width={450}
+                redraw={true}
+            />
+        </div>)
 };
 
 export const Card = ({name, data, sub}) => {
@@ -50,48 +31,41 @@ export const Card = ({name, data, sub}) => {
     </div>)
 };
 
-export const TestGraph = ({name, lable}) => {
-    const data = {
-        lable: [lable],
-        datasets: [],
-        options: {
-            title: {
-                display: true,
-                text: 'Custom Chart Title'
-            }
-        }
-    };
-    const test = name.map(user => createDataForGraph(user.data['username'], user.data[lable], user.color));
-    test.map(x => data.datasets.push(x));
-    return <div className={'card'}>
-        <div className={'graph-mini'} style={{backgroundColor: 'white'}}>
-            <div className={'card-container-pie'}>
-                <div className={'card-top'}>{(lable).split('')[0].toUpperCase() +
-                lable.split('').slice(1)
-                    .map(letter => (letter === letter.toUpperCase()
-                        ? ` ${letter}`
-                        : letter)).join('')}
-                </div>
-                <Bar style={{backgroundColor: 'white', color: 'white'}}
-                     width={300}
-                     height={300} data={data}/>
-                <div className={'card-sub'}>test</div>
-            </div>
-        </div>
 
-    </div>
-
-
-};
-
-export const createDataForGraph = (name, data, color) => {
+export const createDataForGraph = (name, data, avg) => {
+    const avgValue = [];
+    for (let i = 0; i < 20; i++) {avgValue.push(avg)}
     return {
-        label: name,
-        backgroundColor: `rgba(${color},0.4)`,
-        borderColor: `rgba(${color},1)`,
-        borderWidth: 1,
-        hoverBackgroundColor: `rgba(${color},0.7)`,
-        hoverBorderColor: `rgba(${color},1)`,
-        data: [data]
+        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        datasets: [
+            {
+                fill: false,
+                label: `${name.toUpperCase()} Avg`,
+                backgroundColor: 'rgba(255, 255, 255,0.5)',
+                borderColor: 'rgba(255, 255, 255,0.4)',
+                data: avgValue,
+                steppedLine: false,
+                lineTension: 0.6,
+                pointRadius: 0,
+                pointHitRadius: 10,
+            },
+            {
+                fill: false,
+                borderDash: [],
+                label: name.toUpperCase(),
+                backgroundColor: 'rgba(255,140,0)',// orange
+                borderColor: 'rgb(255,140,0)',
+                data: data,
+                lineTension: 0.1,
+                pointRadius: 1,
+                pointHitRadius: 10,
+
+            },
+
+        ],
     };
+
+
 };
+
+

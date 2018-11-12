@@ -4,8 +4,13 @@
     to {filter:blur(0px)}
 
 }
+.card-chart{
+    max-width:max-content;
+    max-height: max-content;
+    
+}
 
-.card{
+.card, .card-chart{
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
     margin: 10px;
@@ -13,11 +18,16 @@
     text-align: center;
     color: #a6a6a6;
     min-height: 190px;
-    max-height: 390px;
     background-color: #1f1f1f;
-    max-width: 290px;
+
     min-width: 290px;
 
+}
+
+.card{
+    max-height: 390px;
+
+    max-width: 290px;
 }
 
 

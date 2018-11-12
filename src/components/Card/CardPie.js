@@ -3,19 +3,26 @@ import './Card.css'
 import {Line} from 'react-chartjs-2';
 import {fixName} from "../../Functions/Functions";
 
-export const CardPie = ({name, data}) => {
-    console.log(data);
+export const CardPie = ({name, data , dates}) => {
+    const dateList = myDate(dates[0].data);
+    console.log(dateList);
     const avg = data?data.reduce((a, b) => a + b):0;
-    const mydata = createDataForGraph(name, data, avg / 20);
+    const mydata = createDataForGraph(name, data, avg / 20,dateList);
     return (
         <div className={'card-chart'}>
             <Line
                 data={mydata}
-                height={200}
-                width={450}
+                height={300}
+                width={650}
                 redraw={true}
             />
         </div>)
+};
+
+export const myDate =(timeList)=>{
+    return timeList.map( x=> (`${new Date(x*1000).toLocaleDateString('en-US')} ${new Date(x*1000).getHours()}:${new Date(x*1000).getMinutes()}`)
+    );
+
 };
 
 export const Card = ({name, data, sub}) => {
@@ -32,11 +39,11 @@ export const Card = ({name, data, sub}) => {
 };
 
 
-export const createDataForGraph = (name, data, avg) => {
+export const createDataForGraph = (name, data, avg,dates) => {
     const avgValue = [];
     for (let i = 0; i < 20; i++) {avgValue.push(avg)}
     return {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        labels: dates.reverse(),
         datasets: [
             {
                 fill: false,
@@ -48,6 +55,7 @@ export const createDataForGraph = (name, data, avg) => {
                 lineTension: 0.6,
                 pointRadius: 0,
                 pointHitRadius: 10,
+                borderDash: [3],
             },
             {
                 fill: false,

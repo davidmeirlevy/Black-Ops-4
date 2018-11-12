@@ -7,14 +7,14 @@
 .card-chart{
     max-width:max-content;
     max-height: max-content;
-    
+
 }
 
 .card, .card-chart{
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
     margin: 10px;
-    animation: myBlur 1s linear;
+    /*animation: myBlur 1s linear;*/
     text-align: center;
     color: #a6a6a6;
     min-height: 190px;

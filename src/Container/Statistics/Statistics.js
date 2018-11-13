@@ -4,21 +4,19 @@ import {Card} from "../../components/Card/CardPie";
 import {getPresentage, getPrestigeImage} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
-import Blackout from "../Blackout/Blackout";
-
+import WeeklyGraphs from "../WeeklyGraphs/WeeklyGraphs";
 
 class Statistics extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            temp: null,
-            query: '',
+            allData: null,
             playerStats: {
                 username: '',
                 level: null,
                 prestige: 0,
             },
-            page: ''
+            page: '',
         }
     }
 
@@ -27,14 +25,13 @@ class Statistics extends React.Component {
     }
 
     getData = (username) => {
-        getUserData(username)
+        getUserData(username,'profile')
             .then(({data}) => {
-                console.log(data);
                 const {username } = data;
                 const {level,prestige} = data.mp;
                 const multiplayerData = data.mp.lifetime.all;
                 this.setState({
-                    temp: Object.keys(multiplayerData).map(x => Object.assign({action: x, result: multiplayerData[x]})),
+                    allData: Object.keys(multiplayerData).map(x => Object.assign({action: x, result: multiplayerData[x]})),
                     playerStats: {
                         username: username,
                         level: level,
@@ -68,19 +65,16 @@ class Statistics extends React.Component {
             </div>)
     };
 
-    teamDeathMatch = () => {
-        const list = this.state.temp;
+    lifeTime = () => {
+        const list = this.state.allData;
         return (
             <div className={'middel'}>
                 <div className={'card-wrapper'}>
                     {
                         list.map((x, index) => {
-                            return x.action.toLowerCase().includes(this.state.query) ?
-                                <div key={index}>
+                            return<div key={index}>
                                     <Card name={x.action} data={x.result}/>
                                 </div>
-                                :
-                                <div>Loading...</div>
                         })
                     }
                 </div>
@@ -93,10 +87,10 @@ class Statistics extends React.Component {
     pages = (page) => {
         switch (page) {
             case 'BlackOut':
-                return <Blackout/>;
-            case 'Team Deathmatch':
-                return this.teamDeathMatch();
+                return <WeeklyGraphs type={this.state.type?'mp':'wz'} playerName={this.state.playerStats.username}/>;
             default:
+                return this.lifeTime();
+
 
         }
     };
@@ -127,7 +121,7 @@ class Statistics extends React.Component {
     };
 
     render() {
-        const list = (this.state.temp !== null ? this.state.temp : []);
+        const list = (this.state.allData !== null ? this.state.allData : []);
         return (
             <div className={'container'} style={{border: `solid thin ${this.props.color}`}}>
                 {
@@ -137,14 +131,15 @@ class Statistics extends React.Component {
                             list.length > 0
                                 ?
                                 <div>
+
                                     <div className={'testCallse'}>
                                         <div
                                             style={this.state.page === 'Team Deathmatch' ? this.inPage() : this.outPage()}
-                                            onClick={() => this.setState({page: 'Team Deathmatch'})}>Team Deathmatch
+                                            onClick={() => this.setState({page: 'Team Deathmatch'})}>Life time
                                         </div>
                                         <div
                                             style={this.state.page !== 'Team Deathmatch' ? this.inPage() : this.outPage()}
-                                            onClick={() => this.setState({page: 'BlackOut'})}>BlackOut
+                                            onClick={() => this.setState({page: 'BlackOut'})}>Weekly
                                         </div>
                                     </div>
                                     <div className={'pagination-border'}>

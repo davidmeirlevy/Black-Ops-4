@@ -1,9 +1,6 @@
-
 #loading {
-    transform: rotate(90deg);
     animation: loading-spinner 2s linear infinite;
     font-size: 50px;
-
 }
 
 @keyframes loading-spinner {

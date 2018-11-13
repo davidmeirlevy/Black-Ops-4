@@ -1,3 +1,6 @@
+const URL ='https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/';
+
+
 export const toJson = (data) => {
     return data.json()
 };
@@ -6,13 +9,12 @@ export const myFetch = (url) => {
     return fetch(url).then(toJson)
 };
 
-export const getUserData = (username) => {
-    console.log('this is username',username);
-
+export const getUserData = (username,action) => {
+    const path = (action !=='matches'? `${URL}${username}/${action}/` :
+        `${URL}${username}/${action}/mp/start/0/end/0/details` );
     return Promise.resolve(
-             myFetch(`https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/${username}/profile/`)
+             myFetch(path)
     )
-
 };
 
 // https://my.callofduty.com/api/papi-client/crm/cod/v2/title/bo4/platform/xbl/gamer/FormingSpoon801/matches/warzone/start/0/end/0/details

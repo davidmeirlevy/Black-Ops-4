@@ -69,8 +69,8 @@ export const list = () => {
     return [
         // {name: 'dudioudo', color: '255, 0, 0', data: [], friends: []},
         // {show: true, name: 'WakingBrizard', color: '0, 0, 255', data: []},
-        // {show: true, name: 'FormingSpoon801', color: '0, 255, 0', data: []},
-        {show: true, name: 'MenahemCohen', color: '0, 0, 0', data: []},
+        {show: true, name: 'FormingSpoon801', color: '0, 255, 0', data: []},
+        // {show: true, name: 'MenahemCohen', color: '0, 0, 0', data: []},
         // {show: true, name: 'SufleShokolad', color: '255,255,0', data: []},
     ]
 };

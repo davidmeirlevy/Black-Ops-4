@@ -3,13 +3,16 @@ import Statistics from "./Container/Statistics/Statistics";
 import './App.css'
 import {Logo} from "./Functions/Functions";
 import {Loading} from "./components/Loading/Loading";
+import {getUserData} from "./Functions/Http";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            query: 'FormingSpoon801',
             list: [],
-            com: false
+            com: false,
+            isAutorise: false
         }
     }
 
@@ -31,21 +34,27 @@ class App extends React.Component {
         return this.state.list.map(x => ({data: x.data, color: x.color}));
     };
 
-
+    validateName = (name) => {
+        getUserData(name).then(({status}) =>
+            this.setState({
+                isAutorise: (status === 'success')
+            }));
+    };
 
     render() {
         const users = this.getAllUsers();
+        const {isAutorise} = this.state;
+
         return (
             <div>
                 <Logo/>
                 {
-                    users.length >= 1
-                        ?
+                    isAutorise ?
                         <div className={'App'}>
                             {this.state.list.map((user, index) => {
                                 return users.length > 0 ?
                                     <div key={index} className={'statistic-container'}>
-                                        <Statistics name={user.name} color={`rgb(${user.color})`}/>
+                                        <Statistics name={this.state.query} color={`rgb(${user.color})`}/>
                                     </div>
 
                                     :
@@ -56,12 +65,19 @@ class App extends React.Component {
                             })}
                         </div>
                         :
-                        <div/>
+                        <div>
+                            <div className={'login-step'}>
+                                Enter User name <input width={300} onChange={(event) => this.setState({query: event.target.value})}/>
+                                <button onClick={() => this.validateName(this.state.query)}>check</button>
+                            </div>
+                        </div>
                 }
             </div>
         );
     }
 }
+
+
 
 export default App
 

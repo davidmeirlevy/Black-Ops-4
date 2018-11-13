@@ -100,3 +100,19 @@
     margin-right: 2px;
     margin-left: 1px;
 }
+
+.list-nest{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.test{
+    display: flex;
+    height: min-content;
+    justify-self: unset;
+}
+
+.small-card-wrapper{
+    height: 500px;
+    overflow-y: scroll;
+}

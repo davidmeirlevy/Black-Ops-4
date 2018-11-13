@@ -1,7 +1,7 @@
 import React from 'react'
 import './Statistics.css'
-import {Card} from "../../components/Card/CardPie";
-import {getPrestigeImage} from "../../Functions/Functions";
+import {Card, List, SmallCard} from "../../components/Card/CardPie";
+import {fixName, getPrestigeImage} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
 import WeeklyGraphs from "../WeeklyGraphs/WeeklyGraphs";
@@ -17,6 +17,7 @@ class Statistics extends React.Component {
                 prestige: 0,
             },
             page: '',
+            filter:''
         }
     }
 
@@ -69,34 +70,28 @@ class Statistics extends React.Component {
     };
 
     lifeTime = () => {
-
-
-        //groups: killEnemy
-
-
-
         const list = this.state.allData;
-        const tempList = list.filter(x=>x.action.startsWith('killEnemy'));
-        console.log('this is templist',tempList);
+        const perList = list.
+        map(x=>Object.assign({action:fixName(x.action),result:x.result }))
+            .filter(x=>x.action.split(' ')[1] === 'Per');
+        console.log('perlist',perList);
         return (
             <div className={'middel'}>
                 <div className={'card-wrapper'}>
-                    {
-                        list.map((x, index) => {
-                            return <div key={index}>
-                                <Card name={x.action} data={x.result}/>
-                            </div>
-                        })
-                    }
-                    {/*<div>Kill Enemy:</div>*/}
-                    {/*{*/}
-                        {/*tempList.map((x,index)=>{*/}
-                            {/*return <div key={index} className={'list'}>*/}
-                                {/*<Card name={`Kill`}*/}
-                                      {/*sub={x.action.replace('killEnemy',``)} data={x.result}/>*/}
-                            {/*</div>*/}
-                        {/*})*/}
-                    {/*}*/}
+                    <div className={'list-nest'}>
+                        <List data={list} filter={'killEnemy'} />
+                        <List data={list} filter={'stats'} />
+                    </div>
+                    <div className={'small-card-wrapper'}>
+                        {
+                            perList.map((x, index) => {
+                                return <div key={index} >
+                                    <SmallCard name={x.action} data={x.result}/>
+                                </div>
+                            })
+                        }
+                    </div>
+
                 </div>
             </div>
 
@@ -135,7 +130,7 @@ class Statistics extends React.Component {
             borderRadius: "10px 10px 0 0",
             borderBottom: "#fc6621 solid thin",
             color: '#553400',
-            backgroundColor: 'black',
+            backgroundColor: '#1b1b1b',
             shdowBox: '10px 10px 10px white',
             padding: '10px'
 
@@ -144,7 +139,7 @@ class Statistics extends React.Component {
 
     inPage = () => {
         return {
-            backgroundColor: '#1b1b1b',
+            backgroundColor: '#101010',
             padding: '10px',
             marginLeft: "1px",
             border: "#fc6621 solid thin",

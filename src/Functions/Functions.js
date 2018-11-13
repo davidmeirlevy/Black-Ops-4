@@ -4,8 +4,8 @@ export const getPresentage = (num, total, bool = true) => {
     return (bool ? Math.floor((num / total) * 100) : ((num / total)).toString().slice(0, 6));
 };
 
-export const getShortNum = (num, slice = 4) => {
-    return num.toString().slice(0, slice)
+export const normalizeNumber = (num, slice = 3) => {
+    return `${num.toString().split('.')[0]}.${num.toString().split('.')[1].slice(0,3)}`
 };
 
 export const getPrestigeImage = (num) => {

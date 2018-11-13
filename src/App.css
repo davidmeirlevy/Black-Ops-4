@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: row;
     color: #fc6621;
+    justify-content: center;
+
 }
 
 .player-list {
@@ -16,12 +18,13 @@
 }
 
 
-.graph {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .statistic-container {
     margin: 5px;
 }
+
+.login-step {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+

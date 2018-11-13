@@ -1,15 +1,20 @@
-.card{
+.card, .small-card{
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
     margin: 10px;
     text-align: center;
     color: #a6a6a6;
-    min-height: 190px;
     background-color: #1f1f1f;
+    min-height: 190px;
     max-height: 390px;
     max-width: 290px;
     min-width: 290px;
-
+}
+.small-card {
+    overflow-y: scroll;
+    min-height: 80px;
+    max-width: 190px;
+    min-width: 90px;
 }
 .card-sub {
     background-color: #2a2a2a;
@@ -17,13 +22,13 @@
     text-wrap: normal;
 }
 
-.card-top {
+.card-top,.small-card-top {
     background-color: #2a2a2a;
     color: #fc6621;
 
 }
 
-.card-context {
+.card-context, .small-card-context {
     animation-duration: inherit;
     margin: 5px;
     color: white;
@@ -31,4 +36,26 @@
     height: auto;
     line-height: 111px;
     background-color: #1f1f1f;
+    overflow-y: scroll;
 }
+.small-card-context{
+    font-size: 30px;
+}
+.small-card-top{}
+
+.table-result{
+    text-align: right;
+    flex:1;
+}
+
+.table-line{
+    display: flex;
+    border-bottom: solid thin #515151;
+}
+
+.table{
+    margin: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+

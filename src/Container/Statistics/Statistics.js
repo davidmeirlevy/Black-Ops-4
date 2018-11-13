@@ -1,7 +1,7 @@
 import React from 'react'
 import './Statistics.css'
 import {Card} from "../../components/Card/CardPie";
-import {getPresentage, getPrestigeImage} from "../../Functions/Functions";
+import {getPrestigeImage} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
 import WeeklyGraphs from "../WeeklyGraphs/WeeklyGraphs";
@@ -25,13 +25,16 @@ class Statistics extends React.Component {
     }
 
     getData = (username) => {
-        getUserData(username,'profile')
+        getUserData(username, 'profile')
             .then(({data}) => {
-                const {username } = data;
-                const {level,prestige} = data.mp;
+                const {username} = data;
+                const {level, prestige} = data.mp;
                 const multiplayerData = data.mp.lifetime.all;
                 this.setState({
-                    allData: Object.keys(multiplayerData).map(x => Object.assign({action: x, result: multiplayerData[x]})),
+                    allData: Object.keys(multiplayerData).map(x => Object.assign({
+                        action: x,
+                        result: multiplayerData[x]
+                    })),
                     playerStats: {
                         username: username,
                         level: level,
@@ -66,17 +69,34 @@ class Statistics extends React.Component {
     };
 
     lifeTime = () => {
+
+
+        //groups: killEnemy
+
+
+
         const list = this.state.allData;
+        const tempList = list.filter(x=>x.action.startsWith('killEnemy'));
+        console.log('this is templist',tempList);
         return (
             <div className={'middel'}>
                 <div className={'card-wrapper'}>
                     {
                         list.map((x, index) => {
-                            return<div key={index}>
-                                    <Card name={x.action} data={x.result}/>
-                                </div>
+                            return <div key={index}>
+                                <Card name={x.action} data={x.result}/>
+                            </div>
                         })
                     }
+                    {/*<div>Kill Enemy:</div>*/}
+                    {/*{*/}
+                        {/*tempList.map((x,index)=>{*/}
+                            {/*return <div key={index} className={'list'}>*/}
+                                {/*<Card name={`Kill`}*/}
+                                      {/*sub={x.action.replace('killEnemy',``)} data={x.result}/>*/}
+                            {/*</div>*/}
+                        {/*})*/}
+                    {/*}*/}
                 </div>
             </div>
 
@@ -84,10 +104,23 @@ class Statistics extends React.Component {
         );
     };
 
+    pagesLabels = () => {
+        return (
+            <div className={'page-labels'}>
+                <div style={this.state.page === 'Team Deathmatch' ? this.inPage() : this.outPage()}
+                     onClick={() => this.setState({page: 'Team Deathmatch'})}>Life time
+                </div>
+                <div style={this.state.page !== 'Team Deathmatch' ? this.inPage() : this.outPage()}
+                     onClick={() => this.setState({page: 'BlackOut'})}>Weekly
+                </div>
+            </div>)
+    };
+
     pages = (page) => {
         switch (page) {
             case 'BlackOut':
-                return <WeeklyGraphs type={this.state.type?'mp':'wz'} playerName={this.state.playerStats.username}/>;
+                return <WeeklyGraphs type={this.state.type ? 'mp' : 'wz'}
+                                     playerName={this.state.playerStats.username}/>;
             default:
                 return this.lifeTime();
 
@@ -98,9 +131,9 @@ class Statistics extends React.Component {
     outPage = () => {
         return {
             marginLeft: "1px",
-            border: "#e6a414 solid thin",
+            border: "#fc6621 solid thin",
             borderRadius: "10px 10px 0 0",
-            borderBottom: "#e6a414 solid thin",
+            borderBottom: "#fc6621 solid thin",
             color: '#553400',
             backgroundColor: 'black',
             shdowBox: '10px 10px 10px white',
@@ -114,7 +147,7 @@ class Statistics extends React.Component {
             backgroundColor: '#1b1b1b',
             padding: '10px',
             marginLeft: "1px",
-            border: "#e6a414 solid thin",
+            border: "#fc6621 solid thin",
             borderRadius: "10px 10px 0 0",
             borderBottom: "none",
         }
@@ -123,7 +156,7 @@ class Statistics extends React.Component {
     render() {
         const list = (this.state.allData !== null ? this.state.allData : []);
         return (
-            <div className={'container'} style={{border: `solid thin ${this.props.color}`}}>
+            <div className={'container'}>
                 {
                     <div>
                         {this.Top()}
@@ -131,31 +164,12 @@ class Statistics extends React.Component {
                             list.length > 0
                                 ?
                                 <div>
-
-                                    <div className={'testCallse'}>
-                                        <div
-                                            style={this.state.page === 'Team Deathmatch' ? this.inPage() : this.outPage()}
-                                            onClick={() => this.setState({page: 'Team Deathmatch'})}>Life time
-                                        </div>
-                                        <div
-                                            style={this.state.page !== 'Team Deathmatch' ? this.inPage() : this.outPage()}
-                                            onClick={() => this.setState({page: 'BlackOut'})}>Weekly
-                                        </div>
-                                    </div>
-                                    <div className={'pagination-border'}>
-                                        {
-                                            this.pages(this.state.page)
-                                        }
-                                    </div>
+                                    {this.pagesLabels()}
+                                    <div className={'pagination-border'}> {this.pages(this.state.page)}</div>
                                 </div>
-
-
                                 :
                                 <Loading/>
-
-
                         }
-
                     </div>
                 }
             </div>

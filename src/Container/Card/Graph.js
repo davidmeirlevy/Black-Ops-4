@@ -10,24 +10,17 @@ export class Graph extends React.Component {
             data: [],
             dates: [],
             type: '',
-            allChartWidth:300,
+            mySize:301,
 
         }
     }
 
     componentDidMount() {
-        window.addEventListener("resize",()=>this.resize()) ;
-        this.refreshData()
+        this.refreshData();
     }
 
-    resize = () =>{
-        this.setState({allChartWidth:(window.innerWidth <= 600 ? 300 : 500)})
-    };
+    componentDidUpdate(){
 
-    componentWillUpdate(prevProps) {
-        if (this.props !== prevProps) {
-            this.refreshData()
-        }
     }
 
     refreshData = () => {
@@ -35,7 +28,7 @@ export class Graph extends React.Component {
             name: this.props.name,
             data: this.props.data,
             dates: this.props.dates,
-            type: this.props.type
+            type: this.props.type,
 
         });
     };
@@ -82,67 +75,49 @@ export class Graph extends React.Component {
                 ],
             };
     };
-    componentDidUpdate(prevState) {
-        if (this.state.allChartWidth !== prevState.allChartWidth) {
-            console.log('change happend')
-        }
-    }
 
     getBar = (name, data, dates) => {
-        const options = {
-            maintainAspectRatio: false	// Don't maintain w/h ratio
-        };
+
         const myData = this.createDataForGraph(name, data, dates);
-        const {allChartWidth}=this.state;
-        console.log('this is allChartWidth',allChartWidth);
         return (<Bar
-            height={300}
-            width={this.state.allChartWidth}
+            height={400}
+            width={300}
             data={myData}
             redraw={true}
-            options={options}
         />)
     };
 
     getPie = (name, data, data2) => {
-        const options = {
-            maintainAspectRatio: false	// Don't maintain w/h ratio
-        };
+        const options = {maintainAspectRatio: false};
         const myData = this.createDataForPie(name, data, data2);
         return (<Doughnut
             height={250}
             width={200}
             data={myData}
             redraw={true}
-            options={options}
-        />)
+            options={options}/>)
     };
 
     createDataForPie = (name, data1, data2) => {
         return {
             labels: [
-                data1.action.toUpperCase(), data2.action
-            ],
+                data1.action, data2.action],
             datasets: [{
                 data: [data1.result, data2.result],
                 backgroundColor: [
                     '#b17a1a',
                     '#6d4c0c',
-                    '#FFCE56'
                 ],
                 hoverBackgroundColor: [
                     '#7e5812',
                     '#4a310d',
-                    '#FFCE56'
                 ]
             }]
         };
     };
 
     render() {
-        const {data} = this.state;
-        const {name} = this.state;
-        const {dates} = this.state;
+        const {data, name, dates} = this.state;
         return (
             <div>
                 {
@@ -156,7 +131,6 @@ export class Graph extends React.Component {
                         :
                         <Loading/>
                 }
-
             </div>
         );
     }

@@ -38,7 +38,7 @@ class LifeTime extends React.Component {
             <div className={'card-wrapper'}>
                 <Card name={`${obj1.action.toUpperCase()}/${obj2.action.toUpperCase()}`}
                       text={`Ratio ${normalizeNumber(obj1.result / obj2.result)*100}%`}>
-                    <Graph name={'test'} data={obj1} dates={obj2} type={'pie'}/>
+                    <Graph name={'test'} data={obj1} dates={obj2} type={'pie'} size={500}/>
                  </Card>
              </div>
         </div>)

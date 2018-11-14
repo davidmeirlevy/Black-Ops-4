@@ -10,17 +10,18 @@
     max-width: 290px;
     min-width: 290px;
 }
-.small-card {
-    overflow-y: scroll;
-    min-height: 80px;
-    max-width: 190px;
-    min-width: 90px;
-}
+
 .card-sub {
     background-color: #2a2a2a;
     margin: 10px;
     text-wrap: normal;
 }
+
+.small-card {
+    overflow-y: scroll;
+    min-height: 80px;
+}
+
 
 .card-top,.small-card-top {
     background-color: #2a2a2a;
@@ -38,10 +39,18 @@
     background-color: #1f1f1f;
     overflow-y: scroll;
 }
+
 .small-card-context{
     font-size: 30px;
 }
-.small-card-top{}
+
+
+.table{
+    margin: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    width: 350px;
+}
 
 .table-result{
     text-align: right;
@@ -51,11 +60,5 @@
 .table-line{
     display: flex;
     border-bottom: solid thin #515151;
-}
-
-.table{
-    margin: 10px;
-    height: 300px;
-    overflow-y: scroll;
 }
 

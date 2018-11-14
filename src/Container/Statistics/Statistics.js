@@ -1,10 +1,11 @@
 import React from 'react'
 import './Statistics.css'
-import {Card, List, SmallCard} from "../../components/Card/CardPie";
-import {fixName, getPrestigeImage} from "../../Functions/Functions";
+import {Card, List, SmallCard, MyPie} from "../../components/Card/CardPie";
+import {fixName, getPrestigeImage, normalizeNumber} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
 import WeeklyGraphs from "../WeeklyGraphs/WeeklyGraphs";
+import {Graph} from "../Card/Graph";
 
 class Statistics extends React.Component {
     constructor(props) {
@@ -17,12 +18,15 @@ class Statistics extends React.Component {
                 prestige: 0,
             },
             page: '',
-            filter:''
+            query: '',
+            array: []
         }
     }
 
     componentDidMount() {
-        this.getData(this.props.name)
+        this.getData(this.props.name);
+
+
     }
 
     getData = (username) => {
@@ -31,6 +35,7 @@ class Statistics extends React.Component {
                 const {username} = data;
                 const {level, prestige} = data.mp;
                 const multiplayerData = data.mp.lifetime.all;
+
                 this.setState({
                     allData: Object.keys(multiplayerData).map(x => Object.assign({
                         action: x,
@@ -41,7 +46,8 @@ class Statistics extends React.Component {
                         level: level,
                         prestige: prestige,
                     },
-                    page: 'Team Deathmatch'
+                    page: 'Team Deathmatch',
+                    array: []
 
                 });
             });
@@ -69,35 +75,92 @@ class Statistics extends React.Component {
             </div>)
     };
 
+
+    hardFilter = (list ,word) => {
+    return list.filter(x=>x.action.split(' ').join('') === word)[0]
+    };
+
+
     lifeTime = () => {
         const list = this.state.allData;
-        const perList = list.
-        map(x=>Object.assign({action:fixName(x.action),result:x.result }))
-            .filter(x=>x.action.split(' ')[1] === 'Per');
-        console.log('perlist',perList);
+        const objectList = list.map(x => Object.assign({action: fixName(x.action), result: x.result}));
+        const objectList2 = list.map(x => Object.assign({action: x.action, result: x.result}));
+        const {array} = this.state;
+        const perList = list.map(x => Object.assign({
+            action: fixName(x.action),
+            result: x.result
+        })).filter(x => x.action.split(' ')[1] === 'Per');
+
+
+        const ekia = this.hardFilter(list,'ekia');
+        const deaths = this.hardFilter(list,'deaths');
+
+
+        const wins = this.hardFilter(list,'wins');
+        const losses = this.hardFilter(list,'losses');
+
+        const score = this.hardFilter(list,'scoreCore');
+        const scorePerGame = this.hardFilter(list,'scorePerGame');
+        const scorePerMin = this.hardFilter(list,'scorePerMinute');
+        const scoreList = ['scoreCore','scorePerGame','scorePerMinute'];
+
+        const scoreListObjects= scoreList.map( x=>this.hardFilter(list,x));
+        console.log('this is tamplate!',scoreListObjects);
+
         return (
             <div className={'middel'}>
                 <div className={'card-wrapper'}>
-                    <div className={'list-nest'}>
-                        <List data={list} filter={'killEnemy'} />
-                        <List data={list} filter={'stats'} />
-                    </div>
+                    {
+                        array.map((filter, index) => {
+                            return (
+                                <div className={'list-nest'} key={index}>
+                                    <List data={objectList} filter={filter}/>
+                                </div>
+
+                            )
+                        })
+                    }
+
+
+                    <Card name={'Ekia/Deaths'} text={`Ratio ${normalizeNumber(ekia.result / deaths.result)}`}>
+                        <Graph name={'test'} data={ekia} dates={deaths} type={'pie'}/>
+                    </Card>
+
+                    <Card name={'Wins/Losses'} text={`Ratio ${normalizeNumber(wins.result / losses.result)}`}>
+                        <Graph name={'test'} data={wins} dates={losses} type={'pie'}/>
+                    </Card>
+
+
+
                     <div className={'small-card-wrapper'}>
                         {
                             perList.map((x, index) => {
-                                return <div key={index} >
-                                    <SmallCard name={x.action} data={x.result}/>
+                                return <div key={index}>
+                                    <Card name={x.action}>
+                                        {normalizeNumber(x.result)}
+                                    </Card>
                                 </div>
                             })
                         }
                     </div>
-
                 </div>
+
+
+                {
+                    scoreListObjects.map((x,index)=>{
+                        console.log(x);
+                        return(<div key={index}><Card name={x.action}>{x.result}</Card></div>)
+                    })
+                }
             </div>
-
-
         );
     };
+
+
+
+    //<Card name={'Score per game'}>{scorePerGame.result}</Card>
+    //                     <Card name={'Score'}>{score.result}</Card>
+    //                     <Card name={'Score per minutes'}>{scorePerMin.result}</Card>
 
     pagesLabels = () => {
         return (
@@ -114,8 +177,7 @@ class Statistics extends React.Component {
     pages = (page) => {
         switch (page) {
             case 'BlackOut':
-                return <WeeklyGraphs type={this.state.type ? 'mp' : 'wz'}
-                                     playerName={this.state.playerStats.username}/>;
+                return <WeeklyGraphs type={'mp'} playerName={this.state.playerStats.username}/>;
             default:
                 return this.lifeTime();
 

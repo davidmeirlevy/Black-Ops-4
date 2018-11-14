@@ -10,8 +10,7 @@ export const myFetch = (url) => {
 };
 
 export const getUserData = (username,action='profile') => {
-    // const path = (action !=='matches'? `${URL}${username}/${action}/type/wz` :
-    const path = (action !=='matches'? `${URL}${username}/${action}` : `${URL}${username}/${action}/mp/start/0/end/0/details` );
+    const path = (!action.match('matches')  ? `${URL}${username}/${action}` : `${URL}${username}/${action}/mp/start/0/end/0/details` );
     return Promise.resolve(myFetch(path))
 };
 

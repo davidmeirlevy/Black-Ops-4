@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae6c0661-0d5d-4c6e-a4d5-fb8e33a62e48" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Card/CardLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Card/Graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Card/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Card/Graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Multiplayer/Multiplayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Functions/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions/Functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Functions/Http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions/Http.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card/CardPie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/CardPie.js" afterDir="false" />
     </list>
@@ -44,11 +45,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="56" />
+          <entry key="css" value="63" />
           <entry key="html" value="10" />
           <entry key="ico" value="2" />
           <entry key="index" value="1" />
-          <entry key="js" value="119" />
+          <entry key="js" value="124" />
           <entry key="json" value="5" />
           <entry key="png" value="1" />
           <entry key="rnc" value="2" />
@@ -58,11 +59,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="56" />
+          <entry key="CSS" value="63" />
           <entry key="HTML" value="10" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="112" />
+          <entry key="JavaScript" value="117" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="RNG Compact" value="2" />
           <entry key="SCSS" value="1" />
@@ -71,20 +72,20 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="6341" />
+          <entry key="css" value="6412" />
           <entry key="html" value="133" />
           <entry key="index" value="864" />
-          <entry key="js" value="44124" />
+          <entry key="js" value="45874" />
           <entry key="json" value="20" />
           <entry key="scss" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="6341" />
+          <entry key="CSS" value="6412" />
           <entry key="HTML" value="133" />
           <entry key="JSON" value="20" />
-          <entry key="JavaScript" value="44869" />
+          <entry key="JavaScript" value="46619" />
           <entry key="PLAIN_TEXT" value="119" />
           <entry key="SCSS" value="63" />
         </counts>
@@ -101,29 +102,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="151" column="79" selection-start-line="151" selection-start-column="79" selection-end-line="151" selection-end-column="79" />
+            <state relative-caret-position="35">
+              <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="e#1654#2464#0" />
-                <element signature="e#5798#6298#0" />
+                <element signature="e#4840#5358#0" />
+                <element signature="e#4859#5178#0" />
+                <element signature="e#5207#5437#0" />
                 <element signature="e#6323#6553#0" />
-                <element signature="e#6576#6919#0" />
-                <element signature="e#6941#7194#0" />
-                <element signature="n#!!block;n#render#0;n#Statistics#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Functions/Functions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -131,12 +121,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Card/CardPie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="95">
+              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#500#1206#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Card/Card.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="722">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1167">
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -144,14 +181,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="-292">
+              <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-                <element signature="n#!!block;n#constructor#0;n#WeeklyGraphs#0" />
-                <element signature="n#!!block;n#componentDidUpdate#0;n#WeeklyGraphs#0" />
-                <element signature="n#!!block;n#componentDidMount#0;n#WeeklyGraphs#0" />
-                <element signature="e#572#1382#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Container/Card/Graph.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-387">
+              <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,8 +216,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -191,6 +245,8 @@
       <find>graph</find>
       <find>arra</find>
       <find>from</find>
+      <find>conso</find>
+      <find>top</find>
       <find>SmallCardC</find>
     </findStrings>
     <replaceStrings>
@@ -243,17 +299,19 @@
         <option value="$PROJECT_DIR$/src/Container/Blackout/WeeklyGraphs.js" />
         <option value="$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" />
         <option value="$PROJECT_DIR$/src/Functions/Http.js" />
-        <option value="$PROJECT_DIR$/src/Functions/Functions.js" />
-        <option value="$PROJECT_DIR$/src/components/Card/Card.css" />
         <option value="$PROJECT_DIR$/src/Container/Card/CardLine.js" />
-        <option value="$PROJECT_DIR$/src/Container/Card/Graph.js" />
         <option value="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" />
-        <option value="$PROJECT_DIR$/src/components/Card/CardPie.js" />
+        <option value="$PROJECT_DIR$/src/Functions/Functions.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" />
+        <option value="$PROJECT_DIR$/src/components/Card/CardPie.js" />
+        <option value="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js" />
+        <option value="$PROJECT_DIR$/src/components/Card/Card.css" />
+        <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" />
+        <option value="$PROJECT_DIR$/src/Container/Card/Graph.js" />
+        <option value="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css" />
       </list>
     </option>
   </component>
@@ -323,6 +381,13 @@
               <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Container" type="462c0819:PsiDirectoryNode" />
+              <item name="Card" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
               <item name="Multiplayer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -331,13 +396,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Container" type="462c0819:PsiDirectoryNode" />
               <item name="Statistics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Container" type="462c0819:PsiDirectoryNode" />
-              <item name="WeeklyGraphs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
@@ -417,12 +475,12 @@
       <workItem from="1541677055275" duration="14947000" />
       <workItem from="1541941878102" duration="59350000" />
       <workItem from="1542114447945" duration="20908000" />
-      <workItem from="1542194524821" duration="10689000" />
+      <workItem from="1542194524821" duration="20038000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268901000" />
+    <option name="totallyTimeSpent" value="278250000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -441,8 +499,8 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4996986" weight="0.32941177" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021097" side_tool="true" visible="true" weight="0.3839572" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.7606992" weight="0.3839572" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23990355" side_tool="true" visible="true" weight="0.3839572" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.76009643" visible="true" weight="0.3839572" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -571,13 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -585,44 +636,6 @@
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="117" column="24" selection-start-line="117" selection-start-column="24" selection-end-line="117" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Card/Card.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" column="3" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/Multiplayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -640,63 +653,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Card/Graph.js">
+    <entry file="file://$PROJECT_DIR$/src/Functions/Functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="139" column="30" selection-start-line="139" selection-end-line="140" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="n#!!block;n#componentWillUpdate#0;n#CardLine#0" />
-            <element signature="e#666#859#0" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" column="88" selection-start-line="3" selection-start-column="88" selection-end-line="3" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="646">
+          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#WeeklyGraphs#0" />
-            <element signature="n#!!block;n#componentDidUpdate#0;n#WeeklyGraphs#0" />
-            <element signature="n#!!block;n#componentDidMount#0;n#WeeklyGraphs#0" />
-            <element signature="e#572#1382#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Card/CardPie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="22" />
+        <state relative-caret-position="95">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#500#1206#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Functions/Functions.js">
+    <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="95">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card/Card.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1167">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Card/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-387">
+          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="151" column="79" selection-start-line="151" selection-start-column="79" selection-end-line="151" selection-end-column="79" />
+        <state relative-caret-position="35">
+          <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#1654#2464#0" />
-            <element signature="e#5798#6298#0" />
+            <element signature="e#4840#5358#0" />
+            <element signature="e#4859#5178#0" />
+            <element signature="e#5207#5437#0" />
             <element signature="e#6323#6553#0" />
-            <element signature="e#6576#6919#0" />
-            <element signature="e#6941#7194#0" />
-            <element signature="n#!!block;n#render#0;n#Statistics#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

@@ -9,14 +9,20 @@ export class Graph extends React.Component {
             name: '',
             data: [],
             dates: [],
-            type: ''
+            type: '',
+            allChartWidth:300,
 
         }
     }
 
     componentDidMount() {
+        window.addEventListener("resize",()=>this.resize()) ;
         this.refreshData()
     }
+
+    resize = () =>{
+        this.setState({allChartWidth:(window.innerWidth <= 600 ? 300 : 500)})
+    };
 
     componentWillUpdate(prevProps) {
         if (this.props !== prevProps) {
@@ -40,7 +46,6 @@ export class Graph extends React.Component {
 
     createDataForGraph = (name, data, dates) => {
         const temp = this.normalizeDate(dates);
-        console.log(typeof temp);
         const avgValue = [];
         const avg = this.state.data ? this.state.data.reduce((a, b) => a + b) : 0;
         for (let i = 0; i < 20; i++) {avgValue.push(avg/20)}
@@ -77,26 +82,39 @@ export class Graph extends React.Component {
                 ],
             };
     };
-
+    componentDidUpdate(prevState) {
+        if (this.state.allChartWidth !== prevState.allChartWidth) {
+            console.log('change happend')
+        }
+    }
 
     getBar = (name, data, dates) => {
+        const options = {
+            maintainAspectRatio: false	// Don't maintain w/h ratio
+        };
         const myData = this.createDataForGraph(name, data, dates);
-        return (< Bar
+        const {allChartWidth}=this.state;
+        console.log('this is allChartWidth',allChartWidth);
+        return (<Bar
             height={300}
-            width={500}
+            width={this.state.allChartWidth}
             data={myData}
             redraw={true}
+            options={options}
         />)
     };
 
     getPie = (name, data, data2) => {
-
+        const options = {
+            maintainAspectRatio: false	// Don't maintain w/h ratio
+        };
         const myData = this.createDataForPie(name, data, data2);
         return (<Doughnut
-            height={200}
+            height={250}
             width={200}
             data={myData}
             redraw={true}
+            options={options}
         />)
     };
 
@@ -125,7 +143,6 @@ export class Graph extends React.Component {
         const {data} = this.state;
         const {name} = this.state;
         const {dates} = this.state;
-        console.log('this is dates',dates);
         return (
             <div>
                 {

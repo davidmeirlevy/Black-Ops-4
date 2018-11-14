@@ -33,18 +33,11 @@ export const List = ({data,filter}) => {
     );
 };
 
-export const SmallCard =({name, data, sub})=>{
-    return (<div className={'small-card'}>
-        <div>
-            <div className={'small-card-top'}>{fixName(name)}</div>
-            <div className={'small-card-context'}>{normalizeNumber(data)}</div>
-            <div className={'small -card-sub'}>{sub} </div>
-        </div>
-    </div>)
-};
 
  const SortMaxMin = (array)=>{
     return array.sort((a,b)=> b.result - a.result)
 };
 
 
+export class MyPie {
+}

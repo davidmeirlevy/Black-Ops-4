@@ -10,7 +10,8 @@ export class WeeklyGraphs extends React.Component {
             username:'',
             data: [],
             times: [],
-            type: ''
+            type: '',
+            size:''
         };
     }
 
@@ -20,6 +21,7 @@ export class WeeklyGraphs extends React.Component {
     }
 
     componentDidMount() {
+        console.log('component mounted',this.state.size);
         this.refreshData();
     }
 
@@ -39,6 +41,7 @@ export class WeeklyGraphs extends React.Component {
     };
 
     render() {
+        window.addEventListener('resize',()=>this.setState({size:window.innerWidth}));
         const chartList = Object.keys(this.state.data).map(x => this.state.data[x]);
         const times = Object.keys(this.state.times).map(x => this.state.times[x])[0];
         return (
@@ -46,7 +49,7 @@ export class WeeklyGraphs extends React.Component {
                 {
                     chartList.map((x, index) => {
                         return (<div key={index}>
-                            <Graph name={x.name} dates={times} data={x.data} type={'line'}/>
+                            <Graph name={x.name} dates={times} data={x.data} type={'line'} size={this.state.size}/>
                         </div>)
                     })
                 }

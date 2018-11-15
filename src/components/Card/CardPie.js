@@ -38,6 +38,3 @@ export const List = ({data,filter}) => {
     return array.sort((a,b)=> b.result - a.result)
 };
 
-
-export class MyPie {
-}

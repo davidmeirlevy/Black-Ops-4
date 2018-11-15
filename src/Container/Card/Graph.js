@@ -10,17 +10,12 @@ export class Graph extends React.Component {
             data: [],
             dates: [],
             type: '',
-            mySize:301,
 
         }
     }
 
     componentDidMount() {
         this.refreshData();
-    }
-
-    componentDidUpdate(){
-
     }
 
     refreshData = () => {
@@ -77,11 +72,10 @@ export class Graph extends React.Component {
     };
 
     getBar = (name, data, dates) => {
-
         const myData = this.createDataForGraph(name, data, dates);
         return (<Bar
             height={400}
-            width={300}
+            width={window.innerWidth - 100}
             data={myData}
             redraw={true}
         />)

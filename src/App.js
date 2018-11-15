@@ -4,15 +4,16 @@ import './App.css'
 import {Logo} from "./Functions/Functions";
 import {Loading} from "./components/Loading/Loading";
 import {getUserData} from "./Functions/Http";
+import Login from "./Container/Login/Login";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            query: 'FormingSpoon801',
+            username: '',
             list: [],
             com: false,
-            isAutorise: false
+            isAutorise: null
         }
     }
 
@@ -23,6 +24,10 @@ class App extends React.Component {
         })
     }
 
+    componentDidUpdate(){
+
+    }
+
     changeList = (user) => {
         user.show = !user.show;
         this.setState({
@@ -30,15 +35,17 @@ class App extends React.Component {
         })
     };
 
+    setAutorazion=(acces,username)=>{
+        console.log('from app',acces,username);
+        if(acces)
+        this.setState({
+            isAutorise: true,
+        username:username
+        })
+};
+
     getAllUsers = () => {
         return this.state.list.map(x => ({data: x.data, color: x.color}));
-    };
-
-    validateName = (name) => {
-        getUserData(name).then(({status}) =>
-            this.setState({
-                isAutorise: (status === 'success')
-            }));
     };
 
     render() {
@@ -54,23 +61,16 @@ class App extends React.Component {
                             {this.state.list.map((user, index) => {
                                 return users.length > 0 ?
                                     <div key={index} className={'statistic-container'}>
-                                        <Statistics name={this.state.query} color={`rgb(${user.color})`}/>
+                                        <Statistics name={this.state.username} color={`rgb(${user.color})`}/>
                                     </div>
-
                                     :
                                     <div key={index}>
                                         <Loading/>
                                     </div>
-
                             })}
                         </div>
                         :
-                        <div>
-                            <div className={'login-step'}>
-                                Enter User name <input width={300} onChange={(event) => this.setState({query: event.target.value})}/>
-                                <button onClick={() => this.validateName(this.state.query)}>check</button>
-                            </div>
-                        </div>
+                        <Login isAutorized={(bool,user)=>(this.setAutorazion(bool,user))}/>
                 }
             </div>
         );

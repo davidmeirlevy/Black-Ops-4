@@ -31,6 +31,7 @@ class Statistics extends React.Component {
     getData = (username) => {
         getUserData(username, 'profile')
             .then(({data}) => {
+                console.log(data);
                 const {username} = data;
                 const {level, prestige} = data.mp;
                 const multiplayerData = data.mp.lifetime.all;
@@ -74,9 +75,6 @@ class Statistics extends React.Component {
     };
 
 
-    hardFilter = (list, word) => {
-        return list.filter(x => x.action.split(' ').join('') === word)[0]
-    };
 
 
     pagesLabels = () => {

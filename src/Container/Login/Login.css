@@ -1,0 +1,17 @@
+.sub{
+    font-size: 17px;
+    margin-top: 5px;
+    color: gray;
+
+}
+
+.login{
+    text-align: center;
+    width:200px;
+    height: 200px;
+    border: #fc6621 solid thin;
+    margin: auto;
+    background-color: #1f1f1f;
+    color: #fc6621;
+    padding: 10px;
+}

@@ -62,18 +62,13 @@
     margin: auto;
 }
 
-.logo {
-    height: 100px;
-}
-
 .card-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-
-.tag-list {
-    margin-left: 10px;
+.logo {
+    height: 100px;
 }
 
 .test-pageing {

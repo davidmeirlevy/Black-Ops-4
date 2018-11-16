@@ -1,12 +1,10 @@
-.card, .small-card{
+.card{
     font-family: 'Titillium Web', sans-serif;
     font-weight: bold;
-    margin: 10px;
+    margin: 3px;
     text-align: center;
     color: #a6a6a6;
     background-color: #1f1f1f;
-    min-height: 190px;
-    max-height: 390px;
     max-width: 290px;
     min-width: 290px;
 }
@@ -17,47 +15,17 @@
     text-wrap: normal;
 }
 
-.small-card {
-    overflow-y: scroll;
-    min-height: 80px;
-}
-
-
-.card-top,.small-card-top {
+.card-top{
     background-color: #2a2a2a;
     color: #fc6621;
-
 }
 
-.card-context, .small-card-context {
+.card-context{
     animation-duration: inherit;
     margin: 5px;
     color: white;
-    font-size: 60px;
     height: auto;
     line-height: 111px;
     background-color: #1f1f1f;
-}
-
-.small-card-context{
     font-size: 30px;
 }
-
-
-.table{
-    margin: 10px;
-    height: 300px;
-    overflow-y: scroll;
-    width: 350px;
-}
-
-.table-result{
-    text-align: right;
-    flex:1;
-}
-
-.table-line{
-    display: flex;
-    border-bottom: solid thin #515151;
-}
-

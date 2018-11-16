@@ -1,7 +1,7 @@
 import React from 'react'
 import {normalizeNumber} from "../../Functions/Functions";
-import {Card} from "../../components/Card/CardPie";
-import {Graph} from "../Card/Graph";
+import {Card} from "../../components/Card/Card";
+import {Graph} from "../Graph/Graph";
 import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
 import './LifeTime.css'
@@ -16,7 +16,7 @@ class LifeTime extends React.Component {
         }
     }
 
-    s
+    s;
 
     componentDidMount() {
         this.getData(this.props.name);

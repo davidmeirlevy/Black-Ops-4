@@ -6,27 +6,7 @@
     text-align: center;
 
 }
-
-.player-list {
-    display: inline;
-    margin: 10px;
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: bold;
-}
-
-.player-list:hover {
-    animation: colorChenger 2s linear infinite;
-}
-
-
 .statistic-container {
     margin: 5px;
     width: 100%;
 }
-
-.login-step {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-

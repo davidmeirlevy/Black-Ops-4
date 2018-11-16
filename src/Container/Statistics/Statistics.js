@@ -1,6 +1,6 @@
 import React from 'react'
 import './Statistics.css'
-import {SmallCard} from "../../components/Card/CardPie";
+import {SmallCard} from "../../components/Card/Card";
 import {getPrestigeImage} from "../../Functions/Functions";
 import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
@@ -14,11 +14,10 @@ class Statistics extends React.Component {
             allData: null,
             playerStats: {
                 username: '',
-                level: null,
+                level: 0,
                 prestige: 0,
             },
             page: '',
-            array: []
         }
     }
 
@@ -96,13 +95,12 @@ class Statistics extends React.Component {
             borderRadius: "10px 10px 0 0",
             borderBottom: "none",
         };
-
         return (
             <div className={'page-labels'}>
-                <div style={this.state.page === 'Team Deathmatch' ? inPage : outPage}
+                <div style={this.state.page.match('Team Deathmatch') ? inPage : outPage}
                      onClick={() => this.setState({page: 'Team Deathmatch'})}>Life time
                 </div>
-                <div style={this.state.page !== 'Team Deathmatch' ? inPage : outPage}
+                <div style={!this.state.page.match('Team Deathmatch') ? inPage : outPage}
                      onClick={() => this.setState({page: 'BlackOut'})}>Weekly
                 </div>
             </div>)

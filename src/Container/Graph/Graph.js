@@ -75,9 +75,8 @@ export class Graph extends React.Component {
         const myData = this.createDataForGraph(name, data, dates);
         return (<Bar
             height={400}
-            width={window.innerWidth - 100}
+            width={400}
             data={myData}
-            redraw={true}
         />)
     };
 

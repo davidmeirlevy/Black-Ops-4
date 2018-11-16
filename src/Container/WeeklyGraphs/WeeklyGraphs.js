@@ -1,6 +1,6 @@
 import React from 'react'
 import './Graph.css'
-import {Graph} from "../Card/Graph";
+import {Graph} from "../Graph/Graph";
 import {getUserData} from "../../Functions/Http";
 
 export class WeeklyGraphs extends React.Component {

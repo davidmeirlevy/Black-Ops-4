@@ -10,7 +10,6 @@ import {cardsData, pieData} from "./Data";
 class LifeTime extends React.Component {
     constructor(props) {
         super(props);
-        console.log('this is props', props);
         this.state = {
             allData: null,
         }
@@ -25,7 +24,6 @@ class LifeTime extends React.Component {
 
     getData = (username) => {
         getUserData(username, 'profile').then(({data}) => {
-            console.log(data);
             this.setState({
                 allData: Object.keys(data.mp.lifetime.all)
                     .map(x => Object.assign({action: x, result: data.mp.lifetime.all[x]})),
@@ -34,7 +32,6 @@ class LifeTime extends React.Component {
     };
     pieFactory = (divider, divided) => {
         const {allData} = this.state;
-        console.log(allData);
         const obj1 = this.hardFilter(allData, divider);
         const obj2 = this.hardFilter(allData, divided);
         return (<div className={'middel'}>
@@ -50,9 +47,9 @@ class LifeTime extends React.Component {
     cardFactory = (cardName) => {
         const {allData} = this.state;
         const filterResult = this.hardFilter(allData, cardName);
-        return (<Card name={filterResult.action}>{((filterResult.result % 1 )!== 0 ? normalizeNumber(filterResult.result):filterResult.result)}</Card>)
+        return (<Card
+            name={filterResult.action}>{((filterResult.result % 1) !== 0 ? normalizeNumber(filterResult.result) : filterResult.result)}</Card>)
     };
-
 
 
     hardFilter = (list, word) => {
@@ -71,7 +68,8 @@ class LifeTime extends React.Component {
                         <div className={'cards-wrapper'}>
                             {
                                 pieFactorList.map((x, index) => {
-                                    return (<div key={index}>{this.pieFactory(x.obj1, x.obj2)}</div>)})
+                                    return (<div key={index}>{this.pieFactory(x.obj1, x.obj2)}</div>)
+                                })
                             }
                             {
                                 cardFactoryList.map((x, index) => {

@@ -7,27 +7,27 @@ export class WeeklyGraphs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username:'',
+            username: '',
             data: [],
             times: [],
             type: '',
-            size:''
+            size: ''
         };
     }
 
     componentWillUpdate(prevProps) {
-        if(this.props.data !== prevProps.data)
+        if (this.props.data !== prevProps.data)
             this.refreshData()
     }
 
     componentDidMount() {
-        console.log('component mounted',this.state.size);
+        console.log('component mounted', this.state.size);
         this.refreshData();
     }
 
     refreshData = () => {
-        const {playerName} = this.props;
-        getUserData(playerName,'matches').then(({data}) => {
+        const playerName = this.props.match.params.name;
+        getUserData(playerName, 'matches').then(({data}) => {
             this.setState({
                 data: {
                     killList: {data: data.matches.map(x => x.playerStats.kills), name: 'kill'},
@@ -36,12 +36,13 @@ export class WeeklyGraphs extends React.Component {
                     assistsList: {data: data.matches.map(x => x.playerStats.assists), name: 'assists'},
                     ekiadRatioList: {data: data.matches.map(x => x.playerStats.ekiadRatio), name: 'ekiadRatio'},
                 },
-                times: {data: data.matches.map(x => x.utcStartSeconds)}})
+                times: {data: data.matches.map(x => x.utcStartSeconds)}
+            })
         })
     };
 
     render() {
-        window.addEventListener('resize',()=>this.setState({size:window.innerWidth}));
+        window.addEventListener('resize', () => this.setState({size: window.innerWidth}));
         const chartList = Object.keys(this.state.data).map(x => this.state.data[x]);
         const times = Object.keys(this.state.times).map(x => this.state.times[x])[0];
         return (

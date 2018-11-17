@@ -67,6 +67,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 .logo {
     height: 100px;
 }
@@ -80,12 +81,12 @@
     color: #fc6621;
 }
 
-.list{
+.list {
     display: flex;
     flex-direction: row;
 }
 
-.page-labels{
+.page-labels {
     display: flex;
     margin-bottom: -1px;
 }
@@ -96,18 +97,18 @@
     margin-left: 1px;
 }
 
-.list-nest{
+.list-nest {
     display: flex;
     flex-wrap: wrap;
 }
 
-.test{
+.test {
     display: flex;
     height: min-content;
     justify-self: unset;
 }
 
-.small-card-wrapper{
+.small-card-wrapper {
     height: 500px;
     align-items: center;
 }

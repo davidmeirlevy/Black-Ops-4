@@ -36,39 +36,41 @@ export class Graph extends React.Component {
         const temp = this.normalizeDate(dates);
         const avgValue = [];
         const avg = this.state.data ? this.state.data.reduce((a, b) => a + b) : 0;
-        for (let i = 0; i < 20; i++) {avgValue.push(avg/20)}
-            return {
-                labels: temp.reverse(),
-                datasets: [
-                    {
-                        type: 'line',
-                        fill: false,
-                        label: `Average`,
-                        backgroundColor: 'rgba(255, 255, 255,0.5)',
-                        borderColor: 'rgba(255, 255, 255,0.5)',
-                        data: avgValue,
-                        steppedLine: false,
-                        lineTension: 0.6,
-                        pointRadius: 0,
-                        pointHitRadius: 10,
-                        borderDash: [3],
-                    },
-                    {
-                        type: 'bar',
-                        fill: false,
-                        borderDash: [],
-                        label: name.toUpperCase(),
-                        backgroundColor: 'rgba(255,140,0)',// orange
-                        borderColor: 'rgb(255,140,0)',
-                        data: data,
-                        lineTension: 0.1,
-                        pointRadius: 1,
-                        pointHitRadius: 10,
+        for (let i = 0; i < 20; i++) {
+            avgValue.push(avg / 20)
+        }
+        return {
+            labels: temp.reverse(),
+            datasets: [
+                {
+                    type: 'line',
+                    fill: false,
+                    label: `Average`,
+                    backgroundColor: 'rgba(255, 255, 255,0.5)',
+                    borderColor: 'rgba(255, 255, 255,0.5)',
+                    data: avgValue,
+                    steppedLine: false,
+                    lineTension: 0.6,
+                    pointRadius: 0,
+                    pointHitRadius: 10,
+                    borderDash: [3],
+                },
+                {
+                    type: 'bar',
+                    fill: false,
+                    borderDash: [],
+                    label: name.toUpperCase(),
+                    backgroundColor: 'rgba(255,140,0)',// orange
+                    borderColor: 'rgb(255,140,0)',
+                    data: data,
+                    lineTension: 0.1,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
 
-                    },
+                },
 
-                ],
-            };
+            ],
+        };
     };
 
     getBar = (name, data, dates) => {

@@ -10,6 +10,7 @@ import LifeTime from "../Multiplayer/LifeTime";
 class Statistics extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             allData: null,
             playerStats: {
@@ -22,36 +23,27 @@ class Statistics extends React.Component {
     }
 
     componentDidMount() {
-        this.getData(this.props.name);
-
-
+        this.getData();
     }
 
-    getData = (username) => {
-        getUserData(username, 'profile')
-            .then(({data}) => {
-                console.log(data);
+    getData = () => {
+                const {data} = this.props.location.state;
                 const {username} = data;
                 const {level, prestige} = data.mp;
                 const multiplayerData = data.mp.lifetime.all;
-
                 this.setState({
-                    allData: Object.keys(multiplayerData).map(x => Object.assign({
-                        ction: x,
-                        result: multiplayerData[x]
-                    })),
+                    allData: Object.keys(multiplayerData).map(x => Object.assign({action: x, result: multiplayerData[x]})),
                     playerStats: {
                         username: username,
                         level: level,
                         prestige: prestige,
                     },
                     page: 'Team Deathmatch',
-
                 });
-            });
+
     };
 
-    Top = () => {
+    Top =() => {
         const prestigeImage = {
             backgroundImage: `url(${getPrestigeImage(this.state.playerStats.prestige)})`,
             backgroundRepeat: 'no-repeat',
@@ -66,14 +58,11 @@ class Statistics extends React.Component {
                     </div>
                 </div>
                 <div className={'right'}>
-                    <div className={'right-sub'}>Level: {this.state.playerStats.level}
-                    </div>
+                    <div className={'right-sub'}>Level: {this.state.playerStats.level}</div>
                     <div className={'right-sub'}>Prestige: {this.state.playerStats.prestige}</div>
                 </div>
             </div>)
     };
-
-
 
 
     pagesLabels = () => {
@@ -112,8 +101,6 @@ class Statistics extends React.Component {
                 return <WeeklyGraphs type={'mp'} playerName={this.state.playerStats.username}/>;
             default:
                 return <LifeTime name={this.state.playerStats.username}/>;
-
-
         }
     };
 

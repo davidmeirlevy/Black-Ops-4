@@ -36,8 +36,8 @@ export const pieData = () => {
         }
     ];
 };
-export const cardsData =()=>{
-    return[
+export const cardsData = () => {
+    return [
         'scoreCore',
         'scorePerGame',
         'scorePerMinute',
@@ -47,5 +47,5 @@ export const cardsData =()=>{
         "healsPerGame",
 
     ]
-} ;
+};
 

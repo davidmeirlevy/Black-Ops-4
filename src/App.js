@@ -1,8 +1,10 @@
 import React from 'react'
 import Statistics from "./Container/Statistics/Statistics";
 import './App.css'
-import Login from "./Container/Login/Login";
 import {Logo} from "./components/Logo/Logo";
+import Login from "./Container/Login/Login";
+import LifeTime from "./Container/Multiplayer/LifeTime";
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 class App extends React.Component {
     constructor(props) {
@@ -24,21 +26,16 @@ class App extends React.Component {
     };
 
     render() {
-        const {isAuthorized} = this.state;
-
         return (
             <div>
                 <Logo/>
-                {
-                    isAuthorized ?
-                        <div className={'App'}>
-                            <div className={'statistic-container'}>
-                                <Statistics name={this.state.username}/>
-                            </div>
-                        </div>
-                        :
-                        <Login isAutorized={(bool, user) => (this.setAutoraztion(bool, user))}/>
-                }
+                <Router>
+                    <div>
+                        <Route exact path={'/'} component={Login}/>
+                        <Route path={'/user/:name'} render={(props)=><Statistics {...props} />}/>
+                        <Route path={'/lifetime/:neme'} component={LifeTime}/>
+                    </div>
+                </Router>
             </div>
         );
     }

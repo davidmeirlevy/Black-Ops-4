@@ -1,0 +1,50 @@
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    flex-direction: column;
+
+
+}
+.info-section{
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.84);
+    display: flex;
+}
+
+.navigation {
+    display: flex;
+    margin-bottom: -1px;
+
+}
+
+.page-labels {
+    display: flex;
+}
+
+.left, .right {
+    flex-wrap: wrap;
+    text-align: left;
+
+}
+
+.left {
+    flex-basis: 70%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right-sub {
+    width: auto;
+    margin: 4px 10px 4px 4px;
+}

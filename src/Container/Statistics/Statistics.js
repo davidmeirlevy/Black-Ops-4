@@ -1,16 +1,12 @@
 import React from 'react'
 import './Statistics.css'
-import {SmallCard} from "../../components/Card/Card";
-import {getPrestigeImage} from "../../Functions/Functions";
-import {getUserData} from "../../Functions/Http";
-import {Loading} from "../../components/Loading/Loading";
 import WeeklyGraphs from "../WeeklyGraphs/WeeklyGraphs";
 import LifeTime from "../Multiplayer/LifeTime";
 
 class Statistics extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        console.log(this.props);
         this.state = {
             allData: null,
             playerStats: {
@@ -30,9 +26,7 @@ class Statistics extends React.Component {
                 const {data} = this.props.location.state;
                 const {username} = data;
                 const {level, prestige} = data.mp;
-                const multiplayerData = data.mp.lifetime.all;
                 this.setState({
-                    allData: Object.keys(multiplayerData).map(x => Object.assign({action: x, result: multiplayerData[x]})),
                     playerStats: {
                         username: username,
                         level: level,
@@ -43,26 +37,6 @@ class Statistics extends React.Component {
 
     };
 
-    Top =() => {
-        const prestigeImage = {
-            backgroundImage: `url(${getPrestigeImage(this.state.playerStats.prestige)})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-        };
-        return (
-            <div className={'top'} style={prestigeImage}>
-                <div className={'left'}>
-                    <div>
-                        {this.state.playerStats.username}
-                    </div>
-                </div>
-                <div className={'right'}>
-                    <div className={'right-sub'}>Level: {this.state.playerStats.level}</div>
-                    <div className={'right-sub'}>Prestige: {this.state.playerStats.prestige}</div>
-                </div>
-            </div>)
-    };
 
 
     pagesLabels = () => {
@@ -95,36 +69,11 @@ class Statistics extends React.Component {
             </div>)
     };
 
-    pages = (page) => {
-        switch (page) {
-            case 'BlackOut':
-                return <WeeklyGraphs type={'mp'} playerName={this.state.playerStats.username}/>;
-            default:
-                return <LifeTime name={this.state.playerStats.username}/>;
-        }
-    };
 
     render() {
-        const list = (this.state.allData !== null ? this.state.allData : []);
         return (
             <div className={'container'}>
-                {
-                    <div>
-                        {this.Top()}
-                        {
-                            list.length > 0
-                                ?
-                                <div>
-                                    {this.pagesLabels()}
-                                    <div className={'pagination-border'}>
-                                        {this.pages(this.state.page)}
-                                    </div>
-                                </div>
-                                :
-                                <Loading/>
-                        }
-                    </div>
-                }
+
             </div>
         );
     }

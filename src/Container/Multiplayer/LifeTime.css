@@ -1,5 +1,17 @@
 .cards-wrapper {
     display: flex;
     flex-wrap: wrap;
+}
+
+.container {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #101010;
+    border: solid thin #fc6621;
 
 }

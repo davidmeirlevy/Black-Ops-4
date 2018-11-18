@@ -2,34 +2,37 @@ import React from 'react'
 import {normalizeNumber} from "../../Functions/Functions";
 import {Card} from "../../components/Card/Card";
 import {Graph} from "../Graph/Graph";
-import {getUserData} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
 import './LifeTime.css'
+import '../../App.css'
 import {cardsData, pieData} from "./Data";
+import {getUserData} from "../../Functions/Http";
 
 class LifeTime extends React.Component {
     constructor(props) {
         super(props);
+        console.log('from life time',props);
         this.state = {
             allData: null,
         }
-    }
-
-    s;
+    };
 
     componentDidMount() {
-        this.getData(this.props.name);
+        this.getData(this.props.match.params.name);
     }
 
+    getData = () => {
+        const username = this.props.match.params.name;
+        getUserData(username,'profile')
+            .then(({data})=>{
+                this.setState({
+                    allData: Object.keys(data.mp.lifetime.all)
+                        .map(x => Object.assign({action: x, result: data.mp.lifetime.all[x]})),
+                });
+            })
 
-    getData = (username) => {
-        getUserData(username, 'profile').then(({data}) => {
-            this.setState({
-                allData: Object.keys(data.mp.lifetime.all)
-                    .map(x => Object.assign({action: x, result: data.mp.lifetime.all[x]})),
-            });
-        });
     };
+
     pieFactory = (divider, divided) => {
         const {allData} = this.state;
         const obj1 = this.hardFilter(allData, divider);
@@ -51,18 +54,16 @@ class LifeTime extends React.Component {
             name={filterResult.action}>{((filterResult.result % 1) !== 0 ? normalizeNumber(filterResult.result) : filterResult.result)}</Card>)
     };
 
-
     hardFilter = (list, word) => {
         return list.filter(x => x.action.split(' ').join('') === word)[0]
     };
-
 
     render() {
         const list = (this.state.allData !== null ? this.state.allData : []);
         const cardFactoryList = cardsData();
         const pieFactorList = pieData();
         return (
-            <div>
+            <div className={'container'}>
                 {
                     list.length > 0 ?
                         <div className={'cards-wrapper'}>

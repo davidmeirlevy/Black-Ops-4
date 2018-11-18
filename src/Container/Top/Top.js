@@ -44,7 +44,6 @@ class Top extends React.Component {
             border: "#fc6621 solid thin",
             borderRadius: "10px 10px 0 0",
             borderBottom: "#fc6621 solid thin",
-            color: '#553400',
             backgroundColor: '#1b1b1b',
             shdowBox: '10px 10px 10px white',
             padding: '10px'
@@ -73,10 +72,10 @@ class Top extends React.Component {
 
                 <div className={'navigation'}>
                     <div style={this.props.match.params.section === 'weekly'? inPage : outPage }>
-                        <Link to={'weekly'}>Weekly</Link>
+                        <Link style={{color:'#fc6621',textDecorationLine:'none'}} to={'weekly'}>Weekly</Link>
                     </div>
                     <div style={this.props.match.params.section !== 'weekly'? inPage : outPage }>
-                        <Link to={'lifetime'}>Life Time</Link>
+                        <Link style={{color:'#fc6621',textDecorationLine:'none'}} to={'lifetime'}>Life Time</Link>
                     </div>
                 </div>
             </div>

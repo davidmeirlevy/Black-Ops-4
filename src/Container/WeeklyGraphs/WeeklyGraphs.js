@@ -4,6 +4,7 @@ import '../../App.css'
 
 import {Graph} from "../Graph/Graph";
 import {getUserData} from "../../Functions/Http";
+import {Loading} from "../../components/Loading/Loading";
 
 export class WeeklyGraphs extends React.Component {
     constructor(props) {
@@ -11,9 +12,7 @@ export class WeeklyGraphs extends React.Component {
         this.state = {
             username: '',
             data: [],
-            times: [],
-            type: '',
-            size: ''
+            dates: [],
         };
     }
 
@@ -37,23 +36,26 @@ export class WeeklyGraphs extends React.Component {
                     assistsList: {data: data.matches.map(x => x.playerStats.assists), name: 'assists'},
                     ekiadRatioList: {data: data.matches.map(x => x.playerStats.ekiadRatio), name: 'ekiadRatio'},
                 },
-                times: {data: data.matches.map(x => x.utcStartSeconds)}
+                dates: {data: data.matches.map(x => x.utcStartSeconds)}
             })
         })
     };
 
     render() {
         const chartList = Object.keys(this.state.data).map(x => this.state.data[x]);
-        const times = Object.keys(this.state.times).map(x => this.state.times[x])[0];
+        const times = Object.keys(this.state.dates).map(x => this.state.dates[x])[0];
         return (
             <div className={'container'}>
                 <div className={'graph-container'}>
                     {
+                        chartList.length > 0?
                         chartList.map((x, index) => {
                             return (<div key={index}>
                                 <Graph name={x.name} dates={times} data={x.data} type={'line'} size={this.state.size}/>
                             </div>)
                         })
+                            :
+                            <Loading/>
                     }
                 </div>
             </div>

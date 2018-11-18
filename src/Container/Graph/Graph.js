@@ -10,12 +10,18 @@ export class Graph extends React.Component {
             data: [],
             dates: [],
             type: '',
+            width :window.innerWidth
 
         }
     }
 
     componentDidMount() {
+        console.log('did mount');
+        window.addEventListener("resize", this.updateDimensions);
         this.refreshData();
+    }
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateDimensions);
     }
 
     refreshData = () => {
@@ -73,12 +79,30 @@ export class Graph extends React.Component {
         };
     };
 
-    getBar = (name, data, dates) => {
+    updateDimensions=()=> {
+        this.setState({width: window.innerWidth});
+        this.forceUpdate();
+    };
+
+    componentWillMount(){
+
+        this.updateDimensions();
+    }
+
+    componentDidUpdate(prevState){
+        if(this.state.width !== prevState.width){
+        }
+    }
+
+    getBar = (name, data, dates,width) => {
+
+
         const myData = this.createDataForGraph(name, data, dates);
         return (<Bar
             height={400}
-            width={400}
+            width={width}
             data={myData}
+            redraw={true}
         />)
     };
 
@@ -111,16 +135,18 @@ export class Graph extends React.Component {
         };
     };
 
+
+
     render() {
         const {data, name, dates} = this.state;
+        console.log(this.state.width);
         return (
-            <div>
-                {
+            <div>{
                     this.state.type
                         ?
                         this.state.type.match('line')
                             ?
-                            this.getBar(name, data, dates)
+                            this.getBar(name, data, dates,this.state.width)
                             :
                             this.getPie(name, data, dates)
                         :

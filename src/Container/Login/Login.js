@@ -25,14 +25,24 @@ class Login extends React.Component {
     };
 
     render() {
+        console.log(this.state);
         return (
             <div className={'login'}>
                 <input onChange={(event) => {this.setState({query: event.target.value,}, () => this.validateUsername(this.state.query));}}/>
                 <div hidden={!this.state.validate}>
                     <Link to={{pathname: `/${this.state.query}/lifetime`, state: {data: this.state.data}}}>
-                        <button>Enter</button>
+                        <button className={'button'}>Enter</button>
                     </Link>
-                    {this.state.res}
+                    {/*{this.state.res !== ''&& this.state.res !== 'error'*/}
+                        {/*?*/}
+                        {/*<div className={'check-result'}>*/}
+                            {/*Did you mean :{this.state.data.username}*/}
+                            {/*<div>rank:{this.state.data.mp.level}</div>*/}
+                            {/*<div>prestige:{this.state.data.mp.prestige}</div>*/}
+                        {/*</div>*/}
+                        {/*:*/}
+                        {/*<Loading/>*/}
+
                 </div>
             </div>
         );

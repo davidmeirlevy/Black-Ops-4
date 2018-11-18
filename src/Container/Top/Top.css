@@ -48,3 +48,15 @@
     width: auto;
     margin: 4px 10px 4px 4px;
 }
+
+.check-result{
+    color: gray;
+    font-size: 15px;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    font-size: 20px;
+}

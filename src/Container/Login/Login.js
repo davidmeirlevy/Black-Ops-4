@@ -34,18 +34,8 @@ class Login extends React.Component {
                     <Link to={{pathname: `/${this.state.query}/lifetime`, state: {data: this.state.data}}}>
                         <button className={'button'}>Enter</button>
                     </Link>
-                    {/*{this.state.res !== ''&& this.state.res !== 'error'*/}
-                        {/*?*/}
-                        {/*<div className={'check-result'}>*/}
-                            {/*Did you mean :{this.state.data.username}*/}
-                            {/*<div>rank:{this.state.data.mp.level}</div>*/}
-                            {/*<div>prestige:{this.state.data.mp.prestige}</div>*/}
-                        {/*</div>*/}
-                        {/*:*/}
-                        {/*<Loading/>*/}
-
-                    <span>For example:FormingSpoon801</span>
                 </div>
+                <div className={'example'}> example:FormingSpoon801</div>
             </div>
         );
     }

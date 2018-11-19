@@ -16,10 +16,10 @@ export class Graph extends React.Component {
     }
 
     componentDidMount() {
-        console.log('did mount');
         window.addEventListener("resize", this.updateDimensions);
         this.refreshData();
     }
+
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateDimensions);
     }
@@ -89,14 +89,8 @@ export class Graph extends React.Component {
         this.updateDimensions();
     }
 
-    componentDidUpdate(prevState){
-        if(this.state.width !== prevState.width){
-        }
-    }
 
     getBar = (name, data, dates,width) => {
-
-
         const myData = this.createDataForGraph(name, data, dates);
         return (<Bar
             height={400}
@@ -134,7 +128,6 @@ export class Graph extends React.Component {
             }]
         };
     };
-
 
 
     render() {

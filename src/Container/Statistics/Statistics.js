@@ -1,7 +1,7 @@
 import React from 'react'
 import './Statistics.css'
 import WeeklyGraphs from "../WeeklyGraphs/WeeklyGraphs";
-import LifeTime from "../Multiplayer/LifeTime";
+import LifeTime from "../LifeTime/LifeTime";
 
 class Statistics extends React.Component {
     constructor(props) {

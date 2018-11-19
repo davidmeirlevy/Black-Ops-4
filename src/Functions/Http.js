@@ -11,10 +11,12 @@ export const myFetch = (url) => {
 
 export const getUserData = (username,action='profile') => {
 
-        fetch('http://localhost:5000/api').then(res=>console.log((res)));
-
-
     const path = (!action.match('matches')  ? `${URL}${username}/${action}` : `${URL}${username}/${action}/mp/start/0/end/0/details` );
     return Promise.resolve(myFetch(path))
 };
 
+
+export const getUsersData = (usersList) =>{
+    console.log('active');
+return Promise.all(usersList.map(user =>{return myFetch(`${URL}${user}/profile`)}))
+};

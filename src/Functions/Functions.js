@@ -1,7 +1,8 @@
 import React from "react";
 
-export const normalizeNumber = (num, slice = 3) => {
-    return `${num.toString().split('.')[0]}.${num.toString().split('.')[1].slice(0,slice)}`
+export const normalizeNumber = (num) => {
+
+    return (num.toString().includes('.')?`${num.toString().split('.')[0]}.${num.toString().split('.')[1].slice(0,3)}`:num)
 };
 
 export const getPrestigeImage = (num) => {

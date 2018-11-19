@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/Black-Ops-4/static/js/runtime~main.c55d587a.js"
   },
   {
-    "revision": "85e4657f54a2f8005f1c",
-    "url": "/Black-Ops-4/static/js/main.85e4657f.chunk.js"
+    "revision": "30d8578358897f86c5d0",
+    "url": "/Black-Ops-4/static/js/main.30d85783.chunk.js"
   },
   {
     "revision": "e525466693d039c9acc5",
     "url": "/Black-Ops-4/static/js/1.e5254666.chunk.js"
   },
   {
-    "revision": "85e4657f54a2f8005f1c",
+    "revision": "30d8578358897f86c5d0",
     "url": "/Black-Ops-4/static/css/main.befd02fe.chunk.css"
   },
   {
-    "revision": "9a2caeb3a49df7b845c99e67c0cbb50c",
+    "revision": "803bf39f28a5b4df3bfeea066d4b91c5",
     "url": "/Black-Ops-4/index.html"
   }
 ];

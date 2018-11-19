@@ -44,7 +44,7 @@ class Login extends React.Component {
                         {/*:*/}
                         {/*<Loading/>*/}
 
-
+                    <span>For example:FormingSpoon801</span>
                 </div>
             </div>
         );

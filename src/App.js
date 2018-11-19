@@ -12,9 +12,9 @@ class App extends React.Component {
         return (
             <div>
                 <Logo/>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                     <div>
-                        <Route exact path={'/'} component={Login}/>
+                        <Route exact path="/" render={()=><Login/>} />
                         <Route path={'/:name/:section'} render={(props)=><Top {...props}/>}/>
                         <Route path={'/:name/lifetime'} render={(props)=><LifeTime {...props} />}/>
                         <Route path={'/:name/weekly'} render={(props)=><WeeklyGraphs {...props} />}/>

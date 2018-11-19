@@ -5,10 +5,10 @@ import {fixName, normalizeNumber} from "../../Functions/Functions";
 export const TableRow = (actoin ,data1,data2,friendName)=>{
     return (<div className={'table-row'}>
         <div className={'table-action'}>{fixName(actoin)}</div>
-        <div className={'table-result'}>{normalizeNumber(data1)}</div>
-        <div className={'table-result'}>{normalizeNumber(data2)}</div>
+        <div className={'table-result'}>{Math.floor(data1)}</div>
+        <div className={'table-result'}>{Math.floor(data2)}</div>
         <div className={'table-result'} style={{color:isBigger(data1,data2)}}>
-            {`${normalizeNumber(Math.abs(data2 - data1))}
+            {`${Math.floor(Math.abs(data2 - data1))}
         ${data2 - data1 > 0 ? 'Less' : 'More' } then ${friendName}`}</div>
     </div>)
 };

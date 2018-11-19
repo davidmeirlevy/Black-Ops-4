@@ -28,6 +28,7 @@ class Login extends React.Component {
         console.log(this.state);
         return (
             <div className={'login'}>
+                Enter your username:
                 <input onChange={(event) => {this.setState({query: event.target.value,}, () => this.validateUsername(this.state.query));}}/>
                 <div hidden={!this.state.validate}>
                     <Link to={{pathname: `/${this.state.query}/lifetime`, state: {data: this.state.data}}}>

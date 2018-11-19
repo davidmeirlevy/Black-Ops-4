@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae6c0661-0d5d-4c6e-a4d5-fb8e33a62e48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Container/Login/Login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Card/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Logo/Logo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/index" beforeDir="false" afterPath="$PROJECT_DIR$/server/index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Card/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Graph/Graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Functions/Functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Functions/Functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/CardPie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/TeamMate/TeamMate.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/TeamMate/TeamMate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/TeamMate/TeamMate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/TeamMate/TeamMate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/TeamMate/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/TeamMate/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,13 +27,13 @@
     <session id="-783614583">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="4" />
           <entry key="project.open.time.18" value="1" />
@@ -48,17 +42,20 @@
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="76" />
-          <entry key="html" value="10" />
+          <entry key="as" value="1" />
+          <entry key="css" value="90" />
+          <entry key="gitignore" value="1" />
+          <entry key="html" value="12" />
           <entry key="ico" value="2" />
-          <entry key="index" value="2" />
-          <entry key="js" value="156" />
-          <entry key="json" value="6" />
+          <entry key="index" value="4" />
+          <entry key="js" value="200" />
+          <entry key="json" value="8" />
+          <entry key="md" value="1" />
           <entry key="png" value="1" />
           <entry key="rnc" value="2" />
           <entry key="scss" value="1" />
@@ -67,12 +64,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="76" />
-          <entry key="HTML" value="10" />
+          <entry key="CSS" value="90" />
+          <entry key="HTML" value="12" />
           <entry key="Image" value="3" />
-          <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="150" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="JSON" value="8" />
+          <entry key="JavaScript" value="194" />
+          <entry key="PLAIN_TEXT" value="13" />
           <entry key="RNG Compact" value="2" />
           <entry key="SCSS" value="1" />
           <entry key="TypeScript" value="1" />
@@ -80,27 +77,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="6713" />
-          <entry key="html" value="133" />
-          <entry key="index" value="876" />
-          <entry key="js" value="48941" />
-          <entry key="json" value="26" />
+          <entry key="css" value="7296" />
+          <entry key="html" value="152" />
+          <entry key="index" value="3299" />
+          <entry key="js" value="58231" />
+          <entry key="json" value="31" />
           <entry key="scss" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="6713" />
-          <entry key="HTML" value="133" />
-          <entry key="JSON" value="26" />
-          <entry key="JavaScript" value="49698" />
-          <entry key="PLAIN_TEXT" value="119" />
+          <entry key="CSS" value="7296" />
+          <entry key="HTML" value="152" />
+          <entry key="JSON" value="31" />
+          <entry key="JavaScript" value="61392" />
+          <entry key="PLAIN_TEXT" value="138" />
           <entry key="SCSS" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="24" />
+          <entry key="ESLintLanguageService" value="25" />
         </counts>
       </usages-collector>
     </session>
@@ -109,39 +106,145 @@
     <favorites_list name="call_of_duty_4" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/index">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Functions/Http.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="380">
+                  <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+                  <folding>
+                    <marker date="1542638268652" expanded="true" signature="292:293" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Container/Graph/Graph.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="297">
+                  <caret line="99" column="10" selection-start-line="94" selection-start-column="16" selection-end-line="99" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#1137#2166#0" />
+                    <element signature="e#2243#2329#0" />
+                    <element signature="n#!!block;n#function#0;n#Graph#0" />
+                    <element signature="e#2433#2719#0" />
+                    <element signature="e#2769#3199#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Functions/Functions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="114">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Container/Top/Top.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Container/Navigation/Navigation.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#475#764#0" />
+                    <element signature="e#789#1019#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/TeamMate.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="227">
+                  <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/table.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/TeamMate.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="19">
+                  <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/TeamMate.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="209">
+                  <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Container/Login/Login.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-241">
+                  <caret line="19" column="53" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="53" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>l</find>
-      <find>div</find>
       <find>divide</find>
       <find>progress__text</find>
       <find>style</find>
@@ -164,10 +267,14 @@
       <find>from</find>
       <find>top</find>
       <find>SmallCardC</find>
-      <find>conso</find>
       <find>test-pageing-</find>
       <find>cards-wrapper</find>
       <find>className</find>
+      <find>consol</find>
+      <find>conso</find>
+      <find>index</find>
+      <find>eject</find>
+      <find>times</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -184,18 +291,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/index.css" />
-        <option value="$PROJECT_DIR$/src/Main.js" />
-        <option value="$PROJECT_DIR$/src/login/login-page.js" />
-        <option value="$PROJECT_DIR$/src/login/login.css" />
-        <option value="$PROJECT_DIR$/src/Main/Main.scss" />
-        <option value="$PROJECT_DIR$/src/components/Card.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-progress-bar-battlenet-style/dist/main.min.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-progress-bar-battlenet-style/dist-modules/ProgressBar.js" />
-        <option value="$PROJECT_DIR$/node_modules/react-progress-bar-battlenet-style/style.css" />
-        <option value="$PROJECT_DIR$/src/components/Card/Card.js" />
-        <option value="$PROJECT_DIR$/src/img/image.js" />
-        <option value="$PROJECT_DIR$/src/http/Search.js" />
         <option value="$PROJECT_DIR$/src/Main/Main.css" />
         <option value="$PROJECT_DIR$/src/Main/Main.js" />
         <option value="$PROJECT_DIR$/src/Main/Statistics.js" />
@@ -214,27 +309,39 @@
         <option value="$PROJECT_DIR$/src/Container/Blackout/Blackout.js" />
         <option value="$PROJECT_DIR$/src/Container/Multiplayer/Multiplayer.js" />
         <option value="$PROJECT_DIR$/src/Container/Blackout/WeeklyGraphs.js" />
-        <option value="$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/Functions/Http.js" />
         <option value="$PROJECT_DIR$/src/Container/Card/CardLine.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Container/Multiplayer/Data.js" />
-        <option value="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js" />
-        <option value="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" />
-        <option value="$PROJECT_DIR$/src/Container/Login/Login.js" />
         <option value="$PROJECT_DIR$/src/Container/Card/Graph.js" />
-        <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" />
-        <option value="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css" />
         <option value="$PROJECT_DIR$/src/Container/Login/Login.css" />
-        <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/Functions/Functions.js" />
         <option value="$PROJECT_DIR$/src/components/Logo/Logo.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Card/CardPie.js" />
         <option value="$PROJECT_DIR$/src/components/Card/Card.css" />
-        <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" />
         <option value="$PROJECT_DIR$/server/index" />
+        <option value="$PROJECT_DIR$/src/index" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/build/static/js/1.5a414164.chunk.js" />
+        <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.js" />
+        <option value="$PROJECT_DIR$/src/Container/Statistics/Statistics.css" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js" />
+        <option value="$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css" />
+        <option value="$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css" />
+        <option value="$PROJECT_DIR$/src/Container/Navigation/Navigation.css" />
+        <option value="$PROJECT_DIR$/src/Container/Top/Top.css" />
+        <option value="$PROJECT_DIR$/src/Container/Navigation/Navigation.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Functions/Http.js" />
+        <option value="$PROJECT_DIR$/src/Container/Graph/Graph.js" />
+        <option value="$PROJECT_DIR$/src/Container/Top/Top.js" />
+        <option value="$PROJECT_DIR$/src/Functions/Functions.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/Container/TeamMate/table.js" />
+        <option value="$PROJECT_DIR$/src/Container/TeamMate/TeamMate.css" />
+        <option value="$PROJECT_DIR$/src/Container/Login/Login.js" />
+        <option value="$PROJECT_DIR$/src/Container/TeamMate/TeamMate.js" />
       </list>
     </option>
   </component>
@@ -255,7 +362,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="947" />
+    <option name="width" value="633" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -276,6 +383,11 @@
             <path>
               <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
               <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -287,13 +399,34 @@
               <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
               <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
               <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Container" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
+              <item name="TeamMate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="call_of_duty_4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="call_of_duty_4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -304,6 +437,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -335,6 +469,16 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/index.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -371,37 +515,59 @@
       <workItem from="1542194524821" duration="25606000" />
       <workItem from="1542245837912" duration="374000" />
       <workItem from="1542269816829" duration="5753000" />
-      <workItem from="1542289753550" duration="6122000" />
+      <workItem from="1542289753550" duration="19184000" />
+      <workItem from="1542455480052" duration="40823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296067000" />
+    <option name="totallyTimeSpent" value="349952000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="969" height="1050" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4940476" visible="true" weight="0.20042194" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49503312" visible="true" weight="0.11452682" />
       <window_info id="Structure" order="1" sideWeight="0.50595236" side_tool="true" weight="0.11452682" />
-      <window_info id="npm" order="2" sideWeight="0.50079745" side_tool="true" weight="0.24954791" />
+      <window_info id="npm" order="2" sideWeight="0.5049669" side_tool="true" weight="0.11452682" />
       <window_info id="Favorites" order="3" sideWeight="0.50079745" side_tool="true" weight="0.24954791" />
-      <window_info anchor="bottom" id="Inspection Results" sideWeight="0.4996986" weight="0.39081633" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49668476" weight="0.327551" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49367088" weight="0.327551" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49909583" weight="0.32959184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4996986" weight="0.32857144" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.24593128" side_tool="true" weight="0.38367346" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.75406873" visible="true" weight="0.38367346" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" sideWeight="0.4996986" weight="0.39081633" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49503312" visible="true" weight="0.11452682" />
+      <window_info id="Structure" order="1" sideWeight="0.50595236" side_tool="true" weight="0.11452682" />
+      <window_info id="npm" order="2" sideWeight="0.5049669" side_tool="true" weight="0.11452682" />
+      <window_info id="Favorites" order="3" sideWeight="0.50079745" side_tool="true" weight="0.24954791" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49367088" weight="0.327551" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49909583" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4996986" weight="0.32941177" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50331527" side_tool="true" visible="true" weight="0.39081633" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.75828815" weight="0.3839572" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.24593128" side_tool="true" visible="true" weight="0.38367346" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.75406873" visible="true" weight="0.38367346" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" sideWeight="0.4996986" weight="0.39081633" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -410,49 +576,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Projects/countdown/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../movie_master_web/src/components/HttpActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.css" />
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/block.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="244" column="16" selection-start-line="244" selection-start-column="16" selection-end-line="244" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/legacy.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="220" column="16" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/img/L2.png" />
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5409">
-          <caret line="559" column="60" selection-start-line="559" selection-start-column="54" selection-end-line="559" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/login/login-page.js" />
-    <entry file="file://$PROJECT_DIR$/src/login/login.css" />
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.scss" />
     <entry file="file://$PROJECT_DIR$/node_modules/victory/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-150">
@@ -485,16 +608,6 @@
     <entry file="file://$PROJECT_DIR$/src/http/Search.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/react-animated-number/build/index.js" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-end-line="5" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/favicon2.ico" />
     <entry file="file://$PROJECT_DIR$/src/components/Logo.js" />
     <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Pageing.js" />
@@ -512,121 +625,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/static/js/main.fad2c828.chunk.js" />
     <entry file="file://$PROJECT_DIR$/build/static/js/main.ab3b7117.chunk.js" />
-    <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/Data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/static/js/1.5a414164.chunk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret column="161496" selection-start-column="161496" selection-end-column="161501" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Functions/Http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="74" lean-forward="true" selection-start-column="74" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="112" column="1" lean-forward="true" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
-          <folding>
-            <element signature="e#11#273#0" />
-            <element signature="e#280#507#0" />
-            <element signature="e#523#570#0" />
-            <element signature="e#578#697#0" />
-            <element signature="e#706#770#0" />
-            <element signature="e#783#833#0" />
-            <element signature="e#843#932#0" />
-            <element signature="e#944#965#0" />
-            <element signature="e#981#1049#0" />
-            <element signature="e#1066#1088#0" />
-            <element signature="e#1116#1167#0" />
-            <element signature="e#1174#1221#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Container/Login/Login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#App#0" />
-            <element signature="e#399#511#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,39 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="113" column="74" lean-forward="true" selection-start-line="113" selection-start-column="74" selection-end-line="113" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#2434#2753#0" />
-            <element signature="e#2778#3008#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Graph/Graph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Graph#0" />
-            <element signature="e#439#625#0" />
-            <element signature="e#662#824#0" />
-            <element signature="e#875#2269#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Functions/Functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Card/Card.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -687,17 +658,260 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Container/Multiplayer/LifeTime.css">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.13.0/core-modules/vm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="301" column="3" lean-forward="true" selection-start-line="301" selection-start-column="3" selection-end-line="301" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="6512" column="64" selection-start-line="6512" selection-start-column="64" selection-end-line="6512" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/precache-manifest.3b5d018f5d8ed1510e2d87470b1f9e6b.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/service-worker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/static/js/1.5a414164.chunk.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret column="198686" selection-start-column="198686" selection-end-column="198686" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/as">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/index">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/Graph.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/LifeTime/LifeTime.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Statistics/Statistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Statistics#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Navigation/Navigation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Top/Top.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/WeeklyGraphs/WeeklyGraphs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions/Http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+          <folding>
+            <marker date="1542638268652" expanded="true" signature="292:293" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Navigation/Navigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#475#764#0" />
+            <element signature="e#789#1019#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Functions/Functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Top/Top.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/index">
+    <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/TeamMate.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/LifeTime/LifeTime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/LifeTime/Data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/Graph/Graph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="99" column="10" selection-start-line="94" selection-start-column="16" selection-end-line="99" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1137#2166#0" />
+            <element signature="e#2243#2329#0" />
+            <element signature="n#!!block;n#function#0;n#Graph#0" />
+            <element signature="e#2433#2719#0" />
+            <element signature="e#2769#3199#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Container/TeamMate/TeamMate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="61" column="28" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

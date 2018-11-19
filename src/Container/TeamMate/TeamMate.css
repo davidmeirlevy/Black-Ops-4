@@ -1,5 +1,10 @@
 .TeamMate{
-    border: solid thin orange;
+    border: solid thin rgb(252, 102, 33);
+    color: rgb(252, 102, 33);
+}
+
+.TeamMate-wrapper{
+    margin-left: 4px;
 }
 .table {
     display: flex;
@@ -10,11 +15,12 @@
 .table-row{
     display: flex;
     flex-direction: row;
-    border-bottom: solid thin orange;
+    border-bottom: solid thin rgb(252, 102, 33);
 }
 
 .table-action {
-    flex-basis: 24%;
+    flex-basis: 40%;
+    word-break: break-word;
 
 
 }
@@ -22,11 +28,13 @@
 .table-result {
     flex-basis: 24%;
     text-align: center;
-    border-right: solid thin orange;
+    border-right: solid thin rgb(252, 102, 33);
 }
 
 .table-header{
-    display: flex;
+text-align: center;
+    font-size: 30px;
+    margin: 10px;
 }
 
 .header-item{

@@ -104,41 +104,72 @@ app.get('/weekly/:name', (req, res) => {
 
 
     firebase.database().ref(`/users/${name}`).on('value', (snap) => {
-        const fromDB = snap.val().weekly.dates;
+        const fromDB = snap.val();
 
 
-        http.get(`${MAIN_URL}${name}/matches/mp/start/0/end/0/details`, (resp) => {
-            resp.on('data', (chunk) => {data += chunk;});
-            resp.on('end', () => {
-                const t = JSON.parse(data);
-                const g = t.data.matches;
-                const fromAPI = g.map(x => Object.assign({
-                    date: x.utcStartSeconds
-                    , kills: x.playerStats.kills,
-                    ekia: x.playerStats.ekia,
-                    assists: x.playerStats.assists,
-                    ekiadRatio: x.playerStats.ekiadRatio
-                }));
-                res.json(fromAPI).end();
-                if (true)
-                    firebase.database().ref(`/users/${name}`).update({
-                        weekly:
-                            g.map(x => Object.assign({
-                                date: x.utcStartSeconds,
-                                kills: x.playerStats.kills,
-                                ekia: x.playerStats.ekia,
-                                assists: x.playerStats.assists,
-                                ekiadRatio: x.playerStats.ekiadRatio
-                            }))
 
-                    });
+
+        if (!fromDB.weekly)
+        {
+            http.get(`${MAIN_URL}${name}/matches/mp/start/0/end/0/details`, (resp) => {
+                resp.on('data', (chunk) => {
+                    data += chunk;
+                });
+                resp.on('end', () => {
+                    const t = JSON.parse(data);
+                    const g = t.data.matches;
+                    const fromAPI = g.map(x => Object.assign({
+                        date: x.utcStartSeconds
+                        , kills: x.playerStats.kills,
+                        ekia: x.playerStats.ekia,
+                        assists: x.playerStats.assists,
+                        ekiadRatio: x.playerStats.ekiadRatio
+                    }));
+                    res.json(fromAPI).end();
+                        firebase.database().ref(`/users/${name}`).update({
+                            weekly:
+                                g.map(x => Object.assign({
+                                    date: x.utcStartSeconds,
+                                    kills: x.playerStats.kills,
+                                    ekia: x.playerStats.ekia,
+                                    assists: x.playerStats.assists,
+                                    ekiadRatio: x.playerStats.ekiadRatio
+                                }))
+
+                        });
+                    data = '';
+                });
+
 
             });
+        }
 
 
-        });
+            // http.get(`${MAIN_URL}${name}/matches/mp/start/0/end/0/details`, (resp) => {
+            //     resp.on('data', (chunk) => {
+            //         data += chunk;
+            //     });
+            //     resp.on('end', () => {
+            //         const t = JSON.parse(data);
+            //         const g = t.data.matches;
+            //         const fromAPI = g.map(x => Object.assign({
+            //             date: x.utcStartSeconds
+            //             , kills: x.playerStats.kills,
+            //             ekia: x.playerStats.ekia,
+            //             assists: x.playerStats.assists,
+            //             ekiadRatio: x.playerStats.ekiadRatio
+            //         }));
+            //         res.json(fromAPI).end();
 
-    });
+                    if (true)
+
+                    data = '';
+                });
+
+
+            // });
+
+    // });
 });
 
 app.listen(port2);

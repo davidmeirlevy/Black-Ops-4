@@ -1,4 +1,4 @@
-import React from "react";
+import * as firebase from "firebase";
 
 export const normalizeNumber = (num) => {
 
@@ -23,7 +23,6 @@ export const getPrestigeImage = (num) => {
     return list[num]
 };
 
-
 export const fixName = (name) => {
 return name.split('')[0].toUpperCase() +
     name.split('').slice(1)
@@ -32,3 +31,24 @@ return name.split('')[0].toUpperCase() +
             : letter)).join('')
 };
 
+
+export const normalizeDate = (timeList) => {
+    return timeList.map(x => (`${new Date(x * 1000).toLocaleDateString('en-US')}${new Date(x * 1000).getHours()}:${new Date(x * 1000).getMinutes()}`))
+};
+
+export const getSnapKey = (ref,data) =>{
+    const  userRef=firebase.database().ref(`/users`);
+    userRef.child(`/${ref}`).on('value',(snap)=>{
+        console.log('this is snap',snap.val());
+        if(snap.val() === null){
+            console.log('create data');
+            firebase.database().ref(`/users/${ref}`).push({
+                data:data
+            });
+            return snap.val();
+        }
+
+        return Object.keys(snap.val())[0];
+
+    });
+};

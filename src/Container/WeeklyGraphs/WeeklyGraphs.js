@@ -3,57 +3,87 @@ import './Graph.css'
 import '../../App.css'
 
 import {Graph} from "../Graph/Graph";
-import {getUserData} from "../../Functions/Http";
+import {getUserData, myFetch} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
+import * as firebase from "firebase";
+import * as io from "socket.io-client";
 
 export class WeeklyGraphs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
             data: [],
-            dates: [],
         };
+        // const server =io.connect('http://localhost:5000');
+        // server.on('messege',(data)=>{
+        //     const temp = data;
+        //     this.setState({
+        //         dates:temp
+        //     })
+        // })
+    }
+
+    componentWillMount() {
+        const {name} = this.props.match.params;
+        myFetch(`http://localhost:8000/weekly/${name}`).then(x=>{
+           this.setState({
+               data:
+                   x.map(x => Object.assign({
+                   date: x.date,
+                   kills: x.kills,
+                   ekia: x.ekia,
+                   assists: x.assists,
+                   ekiadRatio: x.ekiadRatio}))
+               }
+           )
+        })
     }
 
     componentWillUpdate(prevProps) {
-        if (this.props.data !== prevProps.data)
-            this.refreshData()
+        if (this.props !== prevProps.data) {
+        }
+
     }
 
     componentDidMount() {
-        this.refreshData();
+        console.log(this.state.dates);
+
+        // this.refreshData();
     }
+
 
     refreshData = () => {
         const playerName = this.props.match.params.name;
         getUserData(playerName, 'matches').then(({data}) => {
-            this.setState({
-                data: {
-                    killList: {data: data.matches.map(x => x.playerStats.kills), name: 'kill'},
-                    ekiaList: {data: data.matches.map(x => x.playerStats.ekia), name: 'ekia'},
-                    deathList: {data: data.matches.map(x => x.playerStats.deaths), name: 'death'},
-                    assistsList: {data: data.matches.map(x => x.playerStats.assists), name: 'assists'},
-                    ekiadRatioList: {data: data.matches.map(x => x.playerStats.ekiadRatio), name: 'ekiadRatio'},
-                },
-                dates: {data: data.matches.map(x => x.utcStartSeconds)}
-            })
-        })
+
+        });
+
     };
 
     render() {
-        const chartList = Object.keys(this.state.data).map(x => this.state.data[x]);
-        const times = Object.keys(this.state.dates).map(x => this.state.dates[x])[0];
+        const chartList = Object.assign({
+            kills:this.state.data.map(x=>x.kills),
+            ekia:this.state.data.map(x=>x.ekia),
+            assists:this.state.data.map(x=>x.assists),
+            ekiadRatio:this.state.data.map(x=>x.ekiadRatio)
+        });
+        console.log('this is keys',Object.keys(chartList));
+        const times = this.state.data.map(x => x.date);
+    console.log(chartList);
+
         return (
             <div className={'container'}>
                 <div className={'graph-container'}>
                     {
-                        chartList.length > 0?
-                        chartList.map((x, index) => {
-                            return (<div key={index}>
-                                <Graph name={x.name} dates={times} data={x.data} type={'line'} size={this.state.size}/>
-                            </div>)
-                        })
+                        chartList.kills.length > 0 ?
+                            Object.keys(chartList).map((x, index) => {
+                                console.log('this is x',x);
+                                return (
+                                        <div key={index}>
+                                    <Graph name={'name'} dates={times} data={chartList[x]} type={'line'}/>
+                                </div>
+                                )
+                            })
                             :
                             <Loading/>
                     }

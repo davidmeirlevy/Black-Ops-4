@@ -3,12 +3,11 @@ import {getPrestigeImage} from "../../Functions/Functions";
 import Link from "react-router-dom/es/Link";
 import './Top.css'
 import Navigation from "../Navigation/Navigation";
-import {getUserData} from "../../Functions/Http";
+import {getUserData, myFetch} from "../../Functions/Http";
 
 class Top extends React.Component {
     constructor(props) {
         super(props);
-        console.log('from Top', props);
         this.state = {
             username: '',
             level: 0,
@@ -30,17 +29,13 @@ class Top extends React.Component {
 
     componentDidMount() {
         const {name} = this.props.match.params;
-        getUserData(name).then(({data}) =>{
-            const {username} = data;
-            const {level, prestige} = data.mp;
+        myFetch(`http://localhost:8000/users/${name}`).then(({username, level, prestige}) => {
             this.setState({
                 username,
                 level,
                 prestige
             })
-            }
-        )
-
+        });
     }
 
     render() {

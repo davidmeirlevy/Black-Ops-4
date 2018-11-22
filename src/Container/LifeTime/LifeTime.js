@@ -6,32 +6,24 @@ import {Loading} from "../../components/Loading/Loading";
 import './LifeTime.css'
 import '../../App.css'
 import {cardsData, pieData} from "./Data";
-import {getUserData} from "../../Functions/Http";
+import { myFetch} from "../../Functions/Http";
 
 class LifeTime extends React.Component {
     constructor(props) {
         super(props);
-        console.log('from life time',props);
         this.state = {
             allData: null,
         }
     };
 
-    componentDidMount() {
-        this.getData(this.props.match.params.name);
+
+    componentWillMount(){
+        const {name} = this.props.match.params;
+        myFetch(`http://localhost:8000/lifetime/${name}`).then(res => {
+            this.setState({allData: res})
+        });
     }
 
-    getData = () => {
-        const username = this.props.match.params.name;
-        getUserData(username,'profile')
-            .then(({data})=>{
-                this.setState({
-                    allData: Object.keys(data.mp.lifetime.all)
-                        .map(x => Object.assign({action: x, result: data.mp.lifetime.all[x]})),
-                });
-            })
-
-    };
 
     pieFactory = (divider, divided) => {
         const {allData} = this.state;

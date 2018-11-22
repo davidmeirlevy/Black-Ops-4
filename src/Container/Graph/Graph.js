@@ -1,6 +1,7 @@
 import React from 'react'
 import {Bar, Doughnut} from "react-chartjs-2";
 import {Loading} from "../../components/Loading/Loading";
+import {normalizeDate} from "../../Functions/Functions";
 
 export class Graph extends React.Component {
     constructor(props) {
@@ -34,17 +35,14 @@ export class Graph extends React.Component {
         });
     };
 
-    normalizeDate = (timeList) => {
-        return timeList.map(x => (`${new Date(x * 1000).toLocaleDateString('en-US')}${new Date(x * 1000).getHours()}:${new Date(x * 1000).getMinutes()}`))
-    };
 
     createDataForGraph = (name, data, dates) => {
-        const temp = this.normalizeDate(dates);
-        const avgValue = [];
-        const avg = this.state.data ? this.state.data.reduce((a, b) => a + b) : 0;
-        for (let i = 0; i < 20; i++) {
-            avgValue.push(avg / 20)
-        }
+        const temp = normalizeDate(dates);
+        const avgValue = [1];
+        // const avg = this.state.data ? this.state.data.reduce((a, b) => a + b) : 0;
+        // for (let i = 0; i < 20; i++) {
+        //     avgValue.push(avg / 20)
+        // }
         return {
             labels: temp.reverse(),
             datasets: [
@@ -132,7 +130,6 @@ export class Graph extends React.Component {
 
     render() {
         const {data, name, dates} = this.state;
-        console.log(this.state.width);
         return (
             <div>{
                     this.state.type

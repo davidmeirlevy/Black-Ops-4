@@ -16,7 +16,7 @@ class Login extends React.Component {
     }
 
     componentWillMount() {
-        myFetch('http://localhost:8000/users/').then(res => {
+        myFetch('users/').then(res => {
             this.setState({
                 options: res.map(x => x.name)
             })

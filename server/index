@@ -3,9 +3,7 @@ const firebase = require('firebase');
 const express = require('express');
 const http = require('https');
 const app = express();
-const port = 5000;
-const port2 = 8000;
-const io = require('socket.io')();
+const port2 = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
 const PLATFORM = 'xbl';
 const TITLE = 'bo4';
@@ -128,4 +126,3 @@ const updateDB = (name, userName, userLevel, userPrestige) => {
 };
 
 app.listen(port2);
-io.listen(port);

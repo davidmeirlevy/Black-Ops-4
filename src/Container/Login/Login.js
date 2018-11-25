@@ -16,7 +16,7 @@ class Login extends React.Component {
     }
 
     componentWillMount() {
-        myFetch('users/').then(res => {
+        myFetch('cod-bo4.herokuapp.com/users').then(res => {
             this.setState({
                 options: res.map(x => x.name)
             })

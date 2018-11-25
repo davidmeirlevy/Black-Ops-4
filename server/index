@@ -11,11 +11,11 @@ const PLATFORM = 'xbl';
 const TITLE = 'bo4';
 const MAIN_URL = `https://my.callofduty.com/api/papi-client/crm/cod/v2/title/${TITLE}/platform/${PLATFORM}/gamer/`;
 
-
+var GLOBAL_NAME ='';
 app.use(cors());
 app.use(bodyParser.json());
 
-var config = {
+const config = {
     apiKey: "AIzaSyAOzEkQ8vpjKbsw5mqnFFmr4qML-bVbCeI",
     authDomain: "call-of-duty-black-ops-4-15a24.firebaseapp.com",
     databaseURL: "https://call-of-duty-black-ops-4-15a24.firebaseio.com",
@@ -25,16 +25,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// io.on('connection', (client) => {
-//     console.log('Client Connected');
-//     let data = '';
-//     // setInterval(() => {
-//       });
-//     // }, 5000)
-// });
-
-
-//Get the user list from the database
 app.get('/users', (req, res) => {
     firebase.database().ref('/users/').on('value', (snap) => {
         const registrateUsers = snap.val();
@@ -44,133 +34,98 @@ app.get('/users', (req, res) => {
     });
 });
 
-// Get the username,level,prestige  from API , and update the database | Top
 app.get('/users/:name', (req, res) => {
-    const name = req.params.name;
-    console.log(`Enter /users/:name`);
+     GLOBAL_NAME = req.params.name;
     let data = '';
-    http.get(`${MAIN_URL}${name}/profile`, (resp) => {
-        resp.on('data', (chunk) => {
-            data += chunk;
-        });
+    http.get(`${MAIN_URL}${GLOBAL_NAME}/profile`, (resp) => {
+        resp.on('data', (chunk) => {data += chunk;});
         resp.on('end', () => {
             const jsonFile = JSON.parse(data);
             const userName = jsonFile.data.username;
             const userLevel = jsonFile.data.mp.level;
             const userPrestige = jsonFile.data.mp.prestige;
             const object = Object.assign({username: userName, level: userLevel, prestige: userPrestige});
-            firebase.database().ref(`/users/${name}`).update({
-                personal: {
-                    name: userName,
-                    level: userLevel,
-                    prestige: userPrestige
-                }
-            }).then(res.json(object).end())
+            updateDB(GLOBAL_NAME, userName, userLevel, userPrestige).then(
+                res.status(200),
+                res.json(object).end())
         });
 
     });
 });
 
-// Get the username data from API , and update the database | Lifetime
 app.get('/lifetime/:name', (req, res) => {
-    const name = req.params.name;
+    GLOBAL_NAME = req.params.name;
     let data = '';
-    http.get(`${MAIN_URL}${name}/profile`, (resp) => {
-        resp.on('data', (chunk) => {
-            data += chunk;
-        });
+    http.get(`${MAIN_URL}${GLOBAL_NAME}/profile`, (resp) => {
+        resp.on('data', (chunk) => {data += chunk;});
         resp.on('end', () => {
             const jsonFile = JSON.parse(data);
             const userData = jsonFile.data.mp.lifetime.all;
-            firebase.database().ref(`/users/${name}`).update({
+            firebase.database().ref(`/users/${GLOBAL_NAME}`).update({
                 data: Object.keys(userData).map(x => Object.assign({action: x, result: userData[x]}))
-            });
-            firebase.database().ref(`/users/${name}`).on('value', (snap) => {
-                res.json(snap.val().data).end()
-            })
-
-
+            }, () => firebase.database().ref(`/users/${GLOBAL_NAME}`).on('value', (snap) => {
+                res.json(snap.val().data);
+                res.status(200)
+            })).then(res.status(200));
         });
 
     });
 });
 
-
 app.get('/weekly/:name', (req, res) => {
     const name = req.params.name;
-    console.log('Enter /weekly/:name');
-    let data = '';
-    let tempData = '';
-
-
-    firebase.database().ref(`/users/${name}`).on('value', (snap) => {
-        const fromDB = snap.val();
-
-
-
-
-        if (!fromDB.weekly)
-        {
+    firebase.database().ref(`/users/${name}/weekly`).on('value', (snap) => {
+        const dataFromDB = snap.val();
+        console.log(dataFromDB);
+        if (dataFromDB == null) {
+            console.log('enter null', dataFromDB);
+            let data = '';
             http.get(`${MAIN_URL}${name}/matches/mp/start/0/end/0/details`, (resp) => {
                 resp.on('data', (chunk) => {
                     data += chunk;
                 });
                 resp.on('end', () => {
-                    const t = JSON.parse(data);
-                    const g = t.data.matches;
-                    const fromAPI = g.map(x => Object.assign({
-                        date: x.utcStartSeconds
-                        , kills: x.playerStats.kills,
-                        ekia: x.playerStats.ekia,
+                    const jsonFile = JSON.parse(data);
+                    const tempData = jsonFile.data.matches;
+                    const fromAPI = tempData.map(x => Object.assign({
                         assists: x.playerStats.assists,
-                        ekiadRatio: x.playerStats.ekiadRatio
+                        date: x.utcStartSeconds,
+                        ekia: x.playerStats.ekia,
+                        ekiadRatio: x.playerStats.ekiadRatio,
+                        kills: x.playerStats.kills
                     }));
-                    res.json(fromAPI).end();
-                        firebase.database().ref(`/users/${name}`).update({
-                            weekly:
-                                g.map(x => Object.assign({
-                                    date: x.utcStartSeconds,
-                                    kills: x.playerStats.kills,
-                                    ekia: x.playerStats.ekia,
-                                    assists: x.playerStats.assists,
-                                    ekiadRatio: x.playerStats.ekiadRatio
-                                }))
-
+                    let size =[];
+                    size = arraysEqual(dataFromDB, fromAPI);
+                    if(size.length !== dataFromDB.length)
+                        firebase.database().ref(`/users/${GLOBAL_NAME}`).update({
+                            weekly: size
                         });
                     data = '';
                 });
-
-
-            });
+            })
         }
-
-
-            // http.get(`${MAIN_URL}${name}/matches/mp/start/0/end/0/details`, (resp) => {
-            //     resp.on('data', (chunk) => {
-            //         data += chunk;
-            //     });
-            //     resp.on('end', () => {
-            //         const t = JSON.parse(data);
-            //         const g = t.data.matches;
-            //         const fromAPI = g.map(x => Object.assign({
-            //             date: x.utcStartSeconds
-            //             , kills: x.playerStats.kills,
-            //             ekia: x.playerStats.ekia,
-            //             assists: x.playerStats.assists,
-            //             ekiadRatio: x.playerStats.ekiadRatio
-            //         }));
-            //         res.json(fromAPI).end();
-
-                    if (true)
-
-                    data = '';
-                });
-
-
-            // });
-
-    // });
+        res.json(dataFromDB);
+    });
 });
+
+const arraysEqual = (arraToSave, arrayWithChanges) => {
+    return Object.values(arrayWithChanges.concat(arraToSave).reduce((r,o) => {
+        r[o.date] = o;
+        return r;
+    },{}));
+
+};
+
+
+const updateDB = (name, userName, userLevel, userPrestige) => {
+    return firebase.database().ref(`/users/${name}`).update({
+        personal: {
+            name: userName,
+            level: userLevel,
+            prestige: userPrestige
+        },
+    })
+};
 
 app.listen(port2);
 io.listen(port);

@@ -1,12 +1,9 @@
 import React from 'react'
 import './Graph.css'
 import '../../App.css'
-
 import {Graph} from "../Graph/Graph";
 import {getUserData, myFetch} from "../../Functions/Http";
 import {Loading} from "../../components/Loading/Loading";
-import * as firebase from "firebase";
-import * as io from "socket.io-client";
 
 export class WeeklyGraphs extends React.Component {
     constructor(props) {
@@ -14,13 +11,6 @@ export class WeeklyGraphs extends React.Component {
         this.state = {
             data: [],
         };
-        // const server =io.connect('http://localhost:5000');
-        // server.on('messege',(data)=>{
-        //     const temp = data;
-        //     this.setState({
-        //         dates:temp
-        //     })
-        // })
     }
 
     componentWillMount() {
@@ -29,11 +19,14 @@ export class WeeklyGraphs extends React.Component {
            this.setState({
                data:
                    x.map(x => Object.assign({
-                   date: x.date,
-                   kills: x.kills,
-                   ekia: x.ekia,
-                   assists: x.assists,
-                   ekiadRatio: x.ekiadRatio}))
+                           assists: x.assists,
+                           date: x.date,
+                           ekia: x.ekia,
+                           ekiadRatio: x.ekiadRatio,
+                           kills: x.kills
+
+                       })
+                   )
                }
            )
         })
@@ -45,13 +38,6 @@ export class WeeklyGraphs extends React.Component {
 
     }
 
-    componentDidMount() {
-        console.log(this.state.dates);
-
-        // this.refreshData();
-    }
-
-
     refreshData = () => {
         const playerName = this.props.match.params.name;
         getUserData(playerName, 'matches').then(({data}) => {
@@ -59,6 +45,7 @@ export class WeeklyGraphs extends React.Component {
         });
 
     };
+
 
     render() {
         const chartList = Object.assign({

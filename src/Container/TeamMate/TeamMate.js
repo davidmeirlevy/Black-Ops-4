@@ -1,9 +1,8 @@
 import React from 'react'
 import { getUsersData} from "../../Functions/Http";
 import './TeamMate.css'
-import {fixName, normalizeNumber} from "../../Functions/Functions";
 import {TableRow} from "./table";
-import {Bar, HorizontalBar} from "react-chartjs-2";
+import {Bar} from "react-chartjs-2";
 
 class TeamMate extends React.Component {
     constructor(props) {

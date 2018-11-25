@@ -1,6 +1,6 @@
 import React from 'react'
 import './TeamMate.css'
-import {fixName, normalizeNumber} from "../../Functions/Functions";
+import {fixName} from "../../Functions/Functions";
 
 export const TableRow = (actoin ,data1,data2,friendName)=>{
     return (<div className={'table-row'}>

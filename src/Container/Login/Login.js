@@ -10,16 +10,15 @@ class Login extends React.Component {
             validate: false,
             query: '',
             data: [],
-            res:'',
-            options:[]
+            res: '',
+            options: []
         }
     }
 
-    componentWillMount(){
-        myFetch('http://localhost:8000/users/')
-            .then(res=>{
+    componentWillMount() {
+        myFetch('http://localhost:8000/users/').then(res => {
             this.setState({
-                options:res.map(x=>x.name)
+                options: res.map(x => x.name)
             })
         })
 
@@ -40,25 +39,30 @@ class Login extends React.Component {
         const {options} = this.state;
         return (
             <div className={'login'}>
-                {
-                    options.length > 0 ?
-                        options.map((user,index)=>{
-                            return(
-                                <div key={index} onClick={()=> {this.setState({query: user
-                                },()=>this.validateUsername(this.state.query))
-                                }}>{user}
-                                    <h1 hidden={!this.state.validate}><Link to={{pathname: `/${this.state.query}/lifetime`, state: {data: this.state.data}}}>
-                                        Click Her
-                                    </Link></h1>
-                                </div>
-                            )
-                        })
-                        :
-                        <div>No User in list</div>
+                <div>
+                    {
+                        options.length > 0 ?
+                            options.map((user, index) => {
+                                return (
+                                    <div key={index} onClick={() => {
+                                        this.setState({
+                                            query: user
+                                        }, () => this.validateUsername(this.state.query))
+                                    }}>{user}
 
-                }
+                                    </div>
+                                )
+                            })
+                            :
+                            <div>No User in list</div>
+
+                    }
 
 
+                </div>
+                <div hidden={!this.state.validate}><Link to={{pathname: `/${this.state.query}/lifetime`, state: {data: this.state.data}}}>
+                    Click Her
+                </Link></div>
             </div>
         );
     }

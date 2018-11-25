@@ -33,7 +33,7 @@ return name.split('')[0].toUpperCase() +
 
 
 export const normalizeDate = (timeList) => {
-    return timeList.map(x => (`${new Date(x * 1000).toLocaleDateString('en-US')}${new Date(x * 1000).getHours()}:${new Date(x * 1000).getMinutes()}`))
+    return timeList.map(x => (`${new Date(x * 1000).toLocaleDateString('en-US')} ${new Date(x * 1000).getHours()}:${new Date(x * 1000).getMinutes()}`))
 };
 
 export const getSnapKey = (ref,data) =>{

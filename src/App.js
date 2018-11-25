@@ -10,16 +10,6 @@ import TeamMate from "./Container/TeamMate/TeamMate";
 
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-
-
-    }
-
-    componentDidMount(){
-
-
-    }
     render() {
         return (
             <div>

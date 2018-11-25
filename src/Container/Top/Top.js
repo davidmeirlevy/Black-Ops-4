@@ -1,9 +1,8 @@
 import React from "react";
 import {getPrestigeImage} from "../../Functions/Functions";
-import Link from "react-router-dom/es/Link";
 import './Top.css'
 import Navigation from "../Navigation/Navigation";
-import {getUserData, myFetch} from "../../Functions/Http";
+import {myFetch} from "../../Functions/Http";
 
 class Top extends React.Component {
     constructor(props) {

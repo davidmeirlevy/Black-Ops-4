@@ -131,4 +131,6 @@ const updateDB = (name, userName, userLevel, userPrestige) => {
     })
 };
 
+app.use(express.static('../dist'))
+
 app.listen(3000);

@@ -5,7 +5,7 @@ const http = require('https');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port2 = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 const PLATFORM = 'xbl';
 const TITLE = 'bo4';
@@ -25,7 +25,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-app.get('/users', (req, res) => {
+app.get('/api/users', (req, res) => {
     console.log('enter api.user');
     firebase.database().ref('/users/').on('value', (snap) => {
         const registrateUsers = snap.val();
@@ -35,7 +35,7 @@ app.get('/users', (req, res) => {
     });
 });
 
-app.get('api/users/:name', (req, res) => {
+app.get('/api/users/:name', (req, res) => {
     GLOBAL_NAME = req.params.name;
     let data = '';
     http.get(`${MAIN_URL}${GLOBAL_NAME}/profile`, (resp) => {
@@ -77,7 +77,7 @@ app.get('api/lifetime/:name', (req, res) => {
     });
 });
 
-app.get('api/weekly/:name', (req, res) => {
+app.get('/api/weekly/:name', (req, res) => {
     const name = req.params.name;
     firebase.database().ref(`/users/${name}/weekly`).on('value', (snap) => {
         const dataFromDB = snap.val();
@@ -131,4 +131,4 @@ const updateDB = (name, userName, userLevel, userPrestige) => {
     })
 };
 
-app.listen(3000);
+app.listen(port);

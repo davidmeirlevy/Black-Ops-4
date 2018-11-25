@@ -17,6 +17,7 @@
     "i": "^0.3.6",
     "node-fetch": "^2.2.1",
     "npm": "^6.4.1",
+    "package.json": "^2.0.1",
     "react": "^16.5.2",
     "react-chartjs-2": "^2.7.4",
     "react-countup": "^4.0.0",

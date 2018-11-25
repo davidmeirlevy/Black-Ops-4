@@ -3,13 +3,13 @@ const firebase = require('firebase');
 const express = require('express');
 const http = require('https');
 const app = express();
-const port2 = 8000;
+const port2 = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
 const PLATFORM = 'xbl';
 const TITLE = 'bo4';
 const MAIN_URL = `https://my.callofduty.com/api/papi-client/crm/cod/v2/title/${TITLE}/platform/${PLATFORM}/gamer/`;
 
-var GLOBAL_NAME ='';
+var GLOBAL_NAME = '';
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -23,7 +23,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-app.get('/users', (req, res) => {
+app.get('/api/users', (req, res) => {
     firebase.database().ref('/users/').on('value', (snap) => {
         const registrateUsers = snap.val();
         res.json(Object.keys(registrateUsers).map(x => Object.assign({name: x})));
@@ -32,11 +32,13 @@ app.get('/users', (req, res) => {
     });
 });
 
-app.get('/users/:name', (req, res) => {
-     GLOBAL_NAME = req.params.name;
+app.get('api/users/:name', (req, res) => {
+    GLOBAL_NAME = req.params.name;
     let data = '';
     http.get(`${MAIN_URL}${GLOBAL_NAME}/profile`, (resp) => {
-        resp.on('data', (chunk) => {data += chunk;});
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
         resp.on('end', () => {
             const jsonFile = JSON.parse(data);
             const userName = jsonFile.data.username;
@@ -51,11 +53,13 @@ app.get('/users/:name', (req, res) => {
     });
 });
 
-app.get('/lifetime/:name', (req, res) => {
+app.get('api/lifetime/:name', (req, res) => {
     GLOBAL_NAME = req.params.name;
     let data = '';
     http.get(`${MAIN_URL}${GLOBAL_NAME}/profile`, (resp) => {
-        resp.on('data', (chunk) => {data += chunk;});
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
         resp.on('end', () => {
             const jsonFile = JSON.parse(data);
             const userData = jsonFile.data.mp.lifetime.all;
@@ -70,7 +74,7 @@ app.get('/lifetime/:name', (req, res) => {
     });
 });
 
-app.get('/weekly/:name', (req, res) => {
+app.get('api/weekly/:name', (req, res) => {
     const name = req.params.name;
     firebase.database().ref(`/users/${name}/weekly`).on('value', (snap) => {
         const dataFromDB = snap.val();
@@ -92,9 +96,9 @@ app.get('/weekly/:name', (req, res) => {
                         ekiadRatio: x.playerStats.ekiadRatio,
                         kills: x.playerStats.kills
                     }));
-                    let size =[];
+                    let size = [];
                     size = arraysEqual(dataFromDB, fromAPI);
-                    if(size.length !== dataFromDB.length)
+                    if (size.length !== dataFromDB.length)
                         firebase.database().ref(`/users/${GLOBAL_NAME}`).update({
                             weekly: size
                         });
@@ -107,13 +111,12 @@ app.get('/weekly/:name', (req, res) => {
 });
 
 const arraysEqual = (arraToSave, arrayWithChanges) => {
-    return Object.values(arrayWithChanges.concat(arraToSave).reduce((r,o) => {
+    return Object.values(arrayWithChanges.concat(arraToSave).reduce((r, o) => {
         r[o.date] = o;
         return r;
-    },{}));
+    }, {}));
 
 };
-
 
 const updateDB = (name, userName, userLevel, userPrestige) => {
     return firebase.database().ref(`/users/${name}`).update({
